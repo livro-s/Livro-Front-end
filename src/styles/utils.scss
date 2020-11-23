@@ -1,0 +1,33 @@
+* {
+  font-weight: medium;
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+#root {
+  // width: 100%;
+  // height: 100vh;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  // height: 100%;
+}
+
+// .table > thead th {
+//   border-top: 2px solid #dee2e6;
+//   border-bottom: 1px solid #dee2e6;
+// }
