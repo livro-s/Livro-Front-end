@@ -4,7 +4,7 @@ import * as Pages from 'pages';
 import AuthContainer from 'container/AuthContainer/AuthContainer';
 
 const App = () => {
-  const { Main, Search } = Pages;
+  const { Main, Search, MyPage } = Pages;
 
   return (
     <Switch>
@@ -15,7 +15,7 @@ const App = () => {
         path="/notice"
         component={() => <div>공지사항 페이지입니다.</div>}
       />
-      <Route path="/myPage" component={() => <div>마이페이지입니다.</div>} />
+      <Route path="/myPage" component={MyPage} />
     </Switch>
   );
 };
