@@ -1,0 +1,140 @@
+@import 'styles/Palette/Palette.scss';
+
+@mixin SchoolInput {
+  width: 50%;
+  height: 100%;
+  display: flex;
+}
+
+@mixin SchoolInputTopTitle {
+  font-size: 15px;
+  color: $darkGray;
+  border-bottom: 1px solid rgba($color: $lightengray, $alpha: 0.5);
+  margin-bottom: 8px;
+}
+
+@mixin SchoolInputText {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba($color: $lightengray, $alpha: 0.5);
+  border-radius: 5px;
+  padding-left: 5px;
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin SchoolLongInput {
+  width: 100%;
+  height: 31px;
+  border: none;
+  border-bottom: 1px solid rgba($color: $lightengray, $alpha: 0.5);
+  background-color: rgba($color: #fff, $alpha: 0);
+  font-size: 25px;
+  color: $grey;
+
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: $grey;
+  }
+}
+
+.Register {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &-Title {
+    color: $main;
+    font-size: 50px;
+  }
+  &-SchoolInputWrap {
+    width: 100%;
+    height: 8.6vh;
+    display: flex;
+    margin-top: 12.6vh;
+    &-SchoolNameWrap {
+      @include SchoolInput();
+      &-InnerWrap {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        &-TopTitle {
+          @include SchoolInputTopTitle();
+        }
+        &-SelectBox {
+          @include SchoolInputText();
+        }
+      }
+    }
+    &-SchoolGradeWrap {
+      width: 100%;
+      height: 8.6vh;
+      display: flex;
+      @include SchoolInput();
+      &-InnerWrap {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        &-TopTitle {
+          @include SchoolInputTopTitle();
+        }
+        &-SelectBox {
+          @include SchoolInputText();
+        }
+      }
+    }
+  }
+
+  &-Name {
+    @include SchoolLongInput();
+    margin: 6vh 0vh 7.9vh 0vh;
+  }
+
+  &-Anther {
+    width: 100%;
+    &-Approach {
+      font-size: 1rem;
+      color: $main;
+    }
+    margin-bottom: 4vh;
+  }
+  &-RegisterButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vw;
+    height: 4.5vh;
+    background-color: $main;
+    color: $white;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+  }
+  &-NextSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &-Title {
+      color: $main;
+      font-size: 50px;
+    }
+    &-IdInput {
+      @include SchoolLongInput();
+      margin: 15.5vh 0vh 10.2vh 0vh;
+    }
+    &-PwInput {
+      @include SchoolLongInput();
+      margin-bottom: 4vh;
+    }
+  }
+}
