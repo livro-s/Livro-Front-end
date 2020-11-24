@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./MainLibrary.scss";
-import ApplyBook from 'assets/icons/ApplyBook.png';
-import MyPage from 'assets/icons/MyPage.png';
-import SearchBook from 'assets/icons/SearchBook.png';
-import CardArrow from 'assets/icons/CardArrow.png';
+import SearchBook from 'assets/svg/SearchBook';
+import ApplyBook from 'assets/svg/ApplyBook';
+import MyPage from 'assets/svg/MyPageBook';
+import CardArrow from 'assets/svg/CardArrow';
 import NewLibrary from "../NewLibrary";
 import { useHistory } from "react-router-dom";
 
@@ -16,13 +16,13 @@ const MainLibrary = () => {
       name: '도서 검색',
       onClick: () => history.push('/search'),
       contents: '내가 찾는 도서의 유무와 도서관 내 위치를 검색을 통해 확인할 수 있어요.',
-      icon: ApplyBook,
+      icon: <SearchBook/>,
     },
 
     {
       name: '신간 도서 신청',
       contents: '교내 도서관에 없는 도서를 신청하고 승인 여부를 확인할 수 있어요.',
-      icon: SearchBook,
+      icon: <ApplyBook/>,
       onClick: () => setIsModal(!isModal),
     },
 
@@ -31,7 +31,7 @@ const MainLibrary = () => {
       onClick: () => history.push('/mypage'),
       link: '/mypage',
       contents: '내가 대출한 책의 대출일자와 연체 여부 등을 빠르게 확인할 수 있어요.',
-      icon: MyPage,
+      icon: <MyPage/>,
     },
   ]
 
@@ -52,8 +52,8 @@ const MainLibrary = () => {
 
             return (
               <div className="MainLibrary-Contents-Card" key={index}>
-                <img className="MainLibrary-Contents-Card-Arrow" src={CardArrow} alt ="arrow" />
-                <img src ={icon} alt ="icon" />
+                <CardArrow className="MainLibrary-Contents-Card-Arrow"/>
+                {icon}
                 <div className="MainLibrary-Contents-Card-Contents">
                   <div className="MainLibrary-Contents-Card-Contents-Title">{name}</div>
                   <div className="MainLibrary-Contents-Card-Contents-SubTitle">{contents}</div>
