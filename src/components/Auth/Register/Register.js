@@ -1,7 +1,20 @@
 import React from 'react';
 import './Register.scss';
 
-const Register = ({ handleIsLogin }) => {
+const Register = ({
+  handleIsLogin,
+  userId,
+  setUserId,
+  password,
+  setPassword,
+  name,
+  setName,
+  school,
+  setSchool,
+  studentNo,
+  setStudentNo,
+  requestHandleRegister,
+}) => {
   const [isNext, setIsNext] = React.useState(false);
 
   return (
@@ -18,6 +31,8 @@ const Register = ({ handleIsLogin }) => {
                 <input
                   type="text"
                   className="Register-SchoolInputWrap-SchoolNameWrap-InnerWrap-SelectBox"
+                  value={school}
+                  onChange={(e) => setSchool(e.target.value)}
                 ></input>
               </div>
             </div>
@@ -29,11 +44,18 @@ const Register = ({ handleIsLogin }) => {
                 <input
                   type="text"
                   className="Register-SchoolInputWrap-SchoolGradeWrap-InnerWrap-SelectBox"
+                  value={studentNo}
+                  onChange={(e) => setStudentNo(e.target.value)}
                 ></input>
               </div>
             </div>
           </div>
-          <input className="Register-Name" placeholder="이름" />
+          <input
+            className="Register-Name"
+            placeholder="이름"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
           <div className="Register-Anther">
             <div
               className="Register-Anther-Approach"
@@ -56,11 +78,15 @@ const Register = ({ handleIsLogin }) => {
             type="text"
             className="Register-NextSection-IdInput"
             placeholder="아이디"
+            value={userId}
+            onChange={(e) => setUserId(e.target.value)}
           />
           <input
-            type="text"
+            type="password"
             className="Register-NextSection-PwInput"
             placeholder="비밀번호"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <div className="Register-Anther">
             <div
@@ -72,7 +98,7 @@ const Register = ({ handleIsLogin }) => {
           </div>
           <button
             className="Register-RegisterButton"
-            onClick={() => console.log('!')}
+            onClick={() => requestHandleRegister()}
           >
             완성
           </button>

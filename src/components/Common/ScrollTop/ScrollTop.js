@@ -1,22 +1,22 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from 'react';
 import { BsBoxArrowInUp } from 'react-icons/bs';
-import "./ScrollTop.scss";
+import './ScrollTop.scss';
 
 const ScrollTop = () => {
   const [isTop, setIsTop] = useState(true);
 
   const detectingScroll = useCallback(() => {
-		if (document.documentElement.scrollTop > 0) {
-			setIsTop(false);
-		} else {
-			setIsTop(true);
-		}
-	}, []);
-
-	const scrollToTop = useCallback(() => {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (document.documentElement.scrollTop > 0) {
+      setIsTop(false);
+    } else {
+      setIsTop(true);
+    }
   }, []);
-  
+
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   useEffect(() => {
     document.addEventListener('scroll', detectingScroll, true);
 
@@ -25,12 +25,11 @@ const ScrollTop = () => {
 
   return (
     <>
-      {
-        !isTop &&
+      {!isTop && (
         <div className="ScrollTop" onClick={scrollToTop}>
           <BsBoxArrowInUp />
         </div>
-      }
+      )}
     </>
   );
 };

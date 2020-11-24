@@ -45,6 +45,7 @@
     &-Approach {
       font-size: 1rem;
       color: $main;
+      cursor: pointer;
     }
     margin-bottom: 4vh;
   }
@@ -58,5 +59,6 @@
     color: $white;
     font-size: 1.5rem;
     border-radius: 50px;
+    cursor: pointer;
   }
 }
