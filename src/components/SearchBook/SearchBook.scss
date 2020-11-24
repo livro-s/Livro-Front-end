@@ -7,7 +7,7 @@
 
 .SearchBook {
 	width: 100%;
-	height: 100%;
+	height: calc(100vh - 170px);
 	margin-top: 1rem;
 
 	@include flexStyle();
@@ -39,12 +39,16 @@
 			padding: 10px;
 
 			&-InputBox {
+				@include flexStyle();
+				align-items: center;
+
 				&-Icon {
 					margin-right: 15px;
 				}
 
 				& > input {
 					width: 500px;
+					max-width: 500px;
 					border: none;
 					outline: none;
 				}
@@ -78,9 +82,9 @@
 
 	&-SearchList {
 		width: 70%;
-		height: 550px;
 		overflow: auto;
 		@include flexStyle();
+		flex-grow: 1;
 		flex-direction: column;
 		-ms-flex-direction: column;
 		justify-content: center;
@@ -93,7 +97,7 @@
 
 		&-SubTitle {
 			margin-left: -10px;
-			margin-top: -2rem;
+			margin-top: -1rem;
 			font-size: 20px;
 		}
 	}
