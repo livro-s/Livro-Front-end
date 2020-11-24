@@ -5,17 +5,21 @@ import { observable, action } from 'mobx';
 
 @autobind
 class MyPageStore {
+  @observable isLoading = true;
   @observable LoanBookList = [];
   @observable User = [];
 
   @action
   handleBookList = async () => {
     try {
+      this.isLoading = true;
       const { data } = await getResponse(`/user/loans`, getToken());
       this.LoanBookList = data;
+      this.isLoading = false;
 
       return data;
-    } catch (error) { 
+    } catch (error) {
+      this.isLoading = false;
       throw error;
     }
   }

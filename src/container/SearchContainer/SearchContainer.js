@@ -44,7 +44,7 @@ const SearchContainer = observer(() => {
     const request = {
       id,
       loanDate: nowDate,
-      returnDate: moment(nowDate).add(7, 'days'),
+      returnDate: moment(nowDate).add(7, 'days').format('YYYY.MM.DD'),
     };
 
     await handleLoanBook(request)

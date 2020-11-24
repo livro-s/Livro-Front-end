@@ -7,7 +7,7 @@ const MyPageContainer = observer(() => {
     const [bookData, setbookData] = useState([]);
     const [User, setUser] = useState([]);
     const { store } = useStores();
-    const { handleBookList, handleUser } = store.MyPageStore;
+    const { handleBookList, handleUser, isLoading } = store.MyPageStore;
 
     
     const requestMyBooks = useCallback( async () => {
@@ -39,8 +39,13 @@ const MyPageContainer = observer(() => {
     }, [requestMyBooks, requestUser]);
     
     return (
-        <MyInfo bookData={bookData} setbookData={setbookData}
-        User={User} setUser={setUser} />
+        <MyInfo
+            bookData={bookData}
+            setbookData={setbookData}
+            User={User}
+            setUser={setUser}
+            isLoading={isLoading}
+        />
     );
 })
 

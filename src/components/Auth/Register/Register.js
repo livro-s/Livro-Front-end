@@ -38,7 +38,7 @@ const Register = ({
                 >
                   <option>학교를 선택해 주세요.</option>
                   <option>대덕소프트웨어마이스터고등학교</option>
-                  <option>대전소프트웨어마이스터고등학교</option>
+                  <option>광주소프트웨어마이스터고등학교</option>
                   <option>대구소프트웨어고등학교</option>
                 </SelectBox>
               </div>

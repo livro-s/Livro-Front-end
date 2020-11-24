@@ -3,6 +3,7 @@ import './MyInfo.scss';
 import Profile from './Profile/Profile';
 import Loan from './Loan/Loan';
 import MySearch from './MySearch/MySearch';
+import Loading from 'components/Common/Loading';
 
 const bookDummyData = [
     {
@@ -28,7 +29,7 @@ const bookDummyData = [
     },
 ]
 
-const MyInfo = ({ bookData, setbookData, User, setUser }) => {
+const MyInfo = ({ bookData, isLoading, setbookData, User, setUser }) => {
 
     const isLoan = ( length ) => {
         console.log(length);
@@ -40,13 +41,14 @@ const MyInfo = ({ bookData, setbookData, User, setUser }) => {
     }
     return (
         <div className="myPage">
+            {
+                isLoading && <Loading />
+            }
             <div className="myPage-background"/>
             <div className="myPage-book-wrapper">
                 <div className="myPage-profile-search--wrapper">
                         <Profile User={User} setUser={setUser}/>
-                    <div className="myPage-search">
-                        {!isLoan(bookData.book && bookData.book.length) ? <MySearch isLoaned={true}/>: <MySearch isLoaned={false}/>}
-                    </div>
+                        {!isLoan(bookData.book && bookData.book.length) ? <MySearch isLoaned={true} bookdata={bookData} />: <MySearch isLoaned={false} bookdata={bookData} />}
                 </div>
                 {!isLoan(bookData.book && bookData.book.length) ? <Loan isLoaned={true} bookdata={bookData}/>: <Loan isLoaned={false} bookdata={bookData}/>}
             </div>

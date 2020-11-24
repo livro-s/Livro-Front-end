@@ -7,7 +7,7 @@ const Profile = ({ User, setUser }) => {
     return (
         <div className="myPage-profile">
             <div className="myPage-profile-circle"/>
-            <div className="myPage-profile-number">{User.name} {User.studentNo}</div>
+            <div className="myPage-profile-number">{User.studentNo} {User.name}</div>
         </div>
     );
 }
