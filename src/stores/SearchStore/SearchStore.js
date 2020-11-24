@@ -33,9 +33,13 @@ class SearchStore {
   @action
   handleLoanBook = async (request) => {
     try {
+      this.isLoading = true;
       const data = await postRequest('/book/loan', request, getToken());
+      this.isLoading = false;
+
       return data;
     } catch (error) {
+      this.isLoading = false;
       throw error;
     }
   }

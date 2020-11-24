@@ -1,9 +1,10 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import "./Navbar.scss";
 
 const Navbar = () => {
   const history = useHistory();
+  const { pathname } = useLocation();
   const routers = [
     {
       link: '/',
@@ -32,7 +33,7 @@ const Navbar = () => {
         {
           routers.map((router, index) => {
             const { link, name } = router;
-            return <div onClick={() => history.push(link)} key={index}>{name}</div>
+            return <div className={link === pathname ? "Navbar-Contents-Current" : "" } onClick={() => history.push(link)} key={index}>{name}</div>
           })
         }
       </div>
