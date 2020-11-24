@@ -2,6 +2,8 @@ import React from 'react';
 import Book from 'assets/svg/Book';
 import './MyInfo.scss';
 import { GoSearch } from 'react-icons/go';
+import Profile from './Profile/Profile';
+import Loan from './Loan/Loan';
 
 const MyInfo = () => {
     return (
@@ -9,10 +11,7 @@ const MyInfo = () => {
             <div className="myPage-background"/>
             <div className="myPage-book-wrapper">
                 <div className="myPage-profile-search--wrapper">
-                    <div className="myPage-profile">
-                        <div className="myPage-profile-circle"/>
-                        <div className="myPage-profile-number">2학년 1반 11번 신서림</div>
-                    </div>
+                        <Profile/>
                     <div className="myPage-search">
                         <div className="myPage-search-input-wrapper">
                             <Book/>
@@ -22,12 +21,7 @@ const MyInfo = () => {
                         <button className="myPage-search-button">검색</button>
                     </div>
                 </div>
-                <div className="myPage-loan">
-                    <div className="myPage-loan-book">대출한</div>
-                    <div className="myPage-loan-book">도서가</div>  
-                    <div className="myPage-loan-book">없어요</div>
-                    {/*대출한 도서가 있는 경우 Mapping 예정 */}
-                </div>
+                <Loan/>
             </div>
         </div>
     )
