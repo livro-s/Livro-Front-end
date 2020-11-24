@@ -1,20 +1,27 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const history = useHistory();
   const routers = [
     {
-      link: '',
+      link: '/',
+      name: '홈',
+    },
+
+    {
+      link: '/auth',
       name: '회원가입'
     },
 
     {
-      link: '',
+      link: '/search',
       name: '도서 확인'
     },
 
     {
-      link: '',
+      link: '/notice',
       name: '공지 사항'
     },
   ];
@@ -25,7 +32,7 @@ const Navbar = () => {
         {
           routers.map((router, index) => {
             const { link, name } = router;
-            return <div key={index}>{name}</div>
+            return <div onClick={() => history.push(link)} key={index}>{name}</div>
           })
         }
       </div>
