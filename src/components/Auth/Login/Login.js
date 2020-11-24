@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.scss';
 import Loading from 'components/Common/Loading';
-
+import { useKeyDown } from 'lib/hooks/useKeyDown';
 const Login = ({
   handleIsRegister,
   requestHandleLogin,
@@ -20,6 +20,8 @@ const Login = ({
         type="text"
         placeholder="ID"
         value={userId}
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        onKeyDown={(e) => useKeyDown(e, requestHandleLogin)}
         onChange={(e) => setUserId(e.target.value)}
       />
       <input
@@ -27,6 +29,8 @@ const Login = ({
         type="password"
         placeholder="Password"
         value={password}
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        onKeyDown={(e) => useKeyDown(e, requestHandleLogin)}
         onChange={(e) => setPassword(e.target.value)}
       />
       <div className="Login-Anther">
