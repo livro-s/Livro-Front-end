@@ -35,7 +35,7 @@
     "react-toastify": "^6.1.0",
     "secure-ls": "^1.2.6",
     "styled-components": "^5.1.0",
-    "sweetalert2": "^9.10.2"
+    "sweetalert2": "^10.10.1"
   },
   "scripts": {
     "start": "react-app-rewired start",

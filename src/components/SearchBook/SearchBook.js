@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import "./SearchBook.scss";
 import { GoSearch } from 'react-icons/go';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
@@ -7,6 +7,7 @@ import { Palette } from "styles/Palette/Palette";
 import { useKeyDown } from "lib/hooks/useKeyDown";
 import { useHistory } from "react-router-dom";
 import Loading from "components/Common/Loading";
+import { confirmAlert } from 'lib/SweetAlert';
 
 const SearchBook = ({ 
   isLoading,
@@ -23,6 +24,10 @@ const SearchBook = ({
 }) => {
   const { main } = Palette;
   const history = useHistory();
+
+  const searchRouter = useCallback(() => {
+    history.push(`/search?keyword=${inputKeyword}`);
+  }, [history, inputKeyword]);
 
   return (
     <div className="SearchBook">
@@ -45,17 +50,17 @@ const SearchBook = ({
                   return;
                 }
                 
-                history.push(`/search?keyword=${inputKeyword}`);
+                searchRouter();
                 requestSearchBooks(e);
               })}
               placeholder="찾고싶은 도서를 검색해보세요"
             />
           </div>
 
-          <GoSearch className="SearchBook-TopWrapper-InputWrapper-InputIcon" />
+          <GoSearch className="SearchBook-TopWrapper-InputWrapper-InputIcon" onClick={searchRouter} />
         </div>
 
-        <button className="SearchBook-TopWrapper-Button" onClick={requestSearchBooks}>검색</button>
+        <button className="SearchBook-TopWrapper-Button" onClick={searchRouter}>검색</button>
       </div>
 
       <div className="SearchBook-UnderBorder">
@@ -89,7 +94,11 @@ const SearchBook = ({
                     <div>{location}</div>
                     <button
                       className={loanable ? "SearchBook-SearchList-Item-Right-Contents-Button" : "SearchBook-SearchList-Item-Right-Contents-DisableButton"}
-                      onClick={() => loanable && requestLoanBook(id)}
+                      onClick={() => {
+                        if (loanable) {
+                          confirmAlert('잠시만요', '책을 대출하시겠습니까?', 'info', () => requestLoanBook(id));
+                        }
+                      }}
                     >
                       대출
                     </button>

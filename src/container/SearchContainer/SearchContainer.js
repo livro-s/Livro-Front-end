@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback, useState } from 'react';
 import { observer } from 'mobx-react';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 import useStores from 'lib/hooks/useStores';
 import SearchBook from 'components/SearchBook';
@@ -12,6 +12,7 @@ const SearchContainer = observer(() => {
   const { handleSearchBooks, handleLoanBook, handleResetList, searchList, isLoading } = store.SearchStore;
 
   const { search } = useLocation();
+  const history = useHistory();
   const { keyword } = queryString.parse(search);
   
   const nowDate = moment().format('YYYY.MM.DD');
@@ -27,10 +28,15 @@ const SearchContainer = observer(() => {
       })
 
       .catch((error) => {
-        console.log(error);
+        const { status } = error.response;
+
+        if (status === 401) {
+          ErrorToast("로그인 후 검색 가능합니다.");
+          history.push('/auth');
+        }
       });
     }
-  }, [handleSearchBooks, inputKeyword, keyword, page]);
+  }, [handleSearchBooks, history, inputKeyword, keyword, page]);
 
   const prevPage = useCallback(() => {
     setPage(page - 1);
