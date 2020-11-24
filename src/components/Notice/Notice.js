@@ -1,10 +1,12 @@
 import React from 'react';
 import './Notice.scss';
-import NoticeCard from './NoticeCard/NoticeCard';
+// import NoticeCard from './NoticeCard/NoticeCard';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-const Notice = ({ prevPage, nextPage, page, cardTemp }) => {
+import Loading from 'components/Common/Loading';
+const Notice = ({ prevPage, nextPage, page, cardTemp, isLoading }) => {
   return (
     <>
+      {isLoading && <Loading />}
       <div className="Notice" />
       <div className="NoticeCardWrap">{cardTemp}</div>
       <div className="NoticePageNationWrap">

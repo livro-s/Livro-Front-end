@@ -28,7 +28,7 @@ const bookDummyData = [
     },
 ]
 
-const MyInfo = ({ bookData, setbookData }) => {
+const MyInfo = ({ bookData, setbookData, User, setUser }) => {
 
     const isLoan = ( length ) => {
         console.log(length);
@@ -43,7 +43,7 @@ const MyInfo = ({ bookData, setbookData }) => {
             <div className="myPage-background"/>
             <div className="myPage-book-wrapper">
                 <div className="myPage-profile-search--wrapper">
-                        <Profile/>
+                        <Profile User={User} setUser={setUser}/>
                     <div className="myPage-search">
                         {!isLoan(bookData.book && bookData.book.length) ? <MySearch isLoaned={true}/>: <MySearch isLoaned={false}/>}
                     </div>

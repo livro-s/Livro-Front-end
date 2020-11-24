@@ -5,8 +5,9 @@ import MyInfo from 'components/MyInfo/MyInfo';
 
 const MyPageContainer = observer(() => {
     const [bookData, setbookData] = useState([]);
+    const [User, setUser] = useState([]);
     const { store } = useStores();
-    const { handleBookList } = store.MyPageStore;
+    const { handleBookList, handleUser } = store.MyPageStore;
 
     
     const requestMyBooks = useCallback( async () => {
@@ -20,12 +21,26 @@ const MyPageContainer = observer(() => {
         })
     }, [handleBookList]);
 
+    const requestUser = useCallback( async () => {
+        await handleUser()
+        .then((response) => {
+            console.log(response);
+            setUser(response);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    }, [handleBookList]);
+
+
     useEffect(() => {
         requestMyBooks();
-    }, [requestMyBooks]);
+        requestUser();
+    }, [requestMyBooks, requestUser]);
     
     return (
-        <MyInfo bookData={bookData} setbookData={setbookData}/>
+        <MyInfo bookData={bookData} setbookData={setbookData}
+        User={User} setUser={setUser} />
     );
 })
 

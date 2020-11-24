@@ -6,6 +6,7 @@ import BookIcon from 'assets/svg/BookIcon';
 import { Palette } from "styles/Palette/Palette";
 import { useKeyDown } from "lib/hooks/useKeyDown";
 import { useHistory } from "react-router-dom";
+import Loading from "components/Common/Loading";
 
 const SearchBook = ({ 
   isLoading,
@@ -22,15 +23,21 @@ const SearchBook = ({
 }) => {
   const { main } = Palette;
   const history = useHistory();
-  console.log(searchList)
 
   return (
     <div className="SearchBook">
+      {
+        isLoading && <Loading />
+      }
       <div className="SearchBook-Background"></div>
       <div className="SearchBook-TopWrapper">
         <div className="SearchBook-TopWrapper-InputWrapper">
           <div className="SearchBook-TopWrapper-InputWrapper-InputBox">
+<<<<<<< HEAD
             <BookIcon className="SearchBook-TopWrapper-InputWrapper-InputBox-Icon" />
+=======
+            <BookIcon className="SearchBook-TopWrapper-InputWrapper-InputBox-Icon" src ={BookIcon} alt ="bookicon" />
+>>>>>>> 80b963dacc3440547c51576789fdd15133a1a333
             <input
               type ="text"
               value={inputKeyword}
@@ -55,7 +62,11 @@ const SearchBook = ({
         <button className="SearchBook-TopWrapper-Button" onClick={requestSearchBooks}>검색</button>
       </div>
 
-      <div className="SearchBook-UnderBorder"></div>
+      <div className="SearchBook-UnderBorder">
+        {
+          searchList && searchList.length > 0 ? <div className="SearchBook-UnderBorder-Length">총 {searchList.length * maxCount}개의 도서가 검색되었습니다.</div> : <></>
+        }
+      </div>
       <div className="SearchBook-SearchList">
         {
           searchList && searchList.length > 0 ? searchList.map((search) => {

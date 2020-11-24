@@ -48,5 +48,9 @@
 		padding: 7px 12px;
 		box-shadow: -2px 3px 5px $gray, 2px 0px 5px $gray;
 		cursor: pointer;
+
+		&:focus {
+			outline: none;
+		}
 	}
 }

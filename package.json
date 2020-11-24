@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@class101/ui": "^9.0.0-rc33",
     "@date-io/date-fns": "^1.3.13",
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
