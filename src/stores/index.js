@@ -7,7 +7,7 @@ const stores = {
   AuthStore: new AuthStore(),
   SearchStore: new SearchStore(),
   MyPageStore: new MyPageStore(),
-  NoticeStore: new NoticeStore(),
+  NoticeStore: new NoticeStore()
 };
 
 export default stores;

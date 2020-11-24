@@ -38,7 +38,7 @@ const SearchBook = ({
       <div className="SearchBook-TopWrapper">
         <div className="SearchBook-TopWrapper-InputWrapper">
           <div className="SearchBook-TopWrapper-InputWrapper-InputBox">
-            <BookIcon className="SearchBook-TopWrapper-InputWrapper-InputBox-Icon" src ={BookIcon} alt ="bookicon" />
+            <BookIcon className="SearchBook-TopWrapper-InputWrapper-InputBox-Icon" />
             <input
               type ="text"
               value={inputKeyword}
