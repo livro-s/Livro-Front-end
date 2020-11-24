@@ -11,8 +11,8 @@ const Navbar = () => {
     },
 
     {
-      link: '/auth',
-      name: '회원가입'
+      link: '/mypage',
+      name: '마이 페이지'
     },
 
     {
