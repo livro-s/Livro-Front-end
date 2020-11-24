@@ -4,33 +4,12 @@ import Profile from './Profile/Profile';
 import Loan from './Loan/Loan';
 import MySearch from './MySearch/MySearch';
 import Loading from 'components/Common/Loading';
-
-const bookDummyData = [
-    {
-        title: '점프 투 파이썬',
-        loanDate:  '2020.08.20',
-        returnDate: '2020.08.28',
-        location: '005.138 원94ㅂ',
-        image: 'http://image.kyobobook.co.kr/images/book/large/796/l9791188331796.jpg'
-    },
-    {
-        title: '아기돼지 삼형제',
-        loanDate:  '2020.08.20',
-        returnDate: '2020.08.28',
-		location: '005.138 원94ㅂ',
-        image: 'http://image.kyobobook.co.kr/images/book/large/796/l9791188331796.jpg'
-    },
-    {
-        title: '아기돼지 삼형제',
-        loanDate:  '2020.08.20',
-        returnDate: '2020.08.28',
-		location: '005.138 원94ㅂ',
-        image: 'http://image.kyobobook.co.kr/images/book/large/796/l9791188331796.jpg'
-    },
-]
+import { getToken } from 'lib/util/Token';
+import { WarningToast } from 'lib/Toast';
+import { useHistory } from 'react-router-dom';
 
 const MyInfo = ({ bookData, isLoading, setbookData, User, setUser }) => {
-
+    const history = useHistory();
     const isLoan = ( length ) => {
         console.log(length);
         if (length === 0) {
@@ -39,6 +18,15 @@ const MyInfo = ({ bookData, isLoading, setbookData, User, setUser }) => {
             return true;
         }
     }
+
+    useEffect(() => {
+        if (!getToken()) {
+            WarningToast("로그인 후 사용 가능합니다.");
+            history.push('/');
+            return;
+        }
+    }, [history]);
+
     return (
         <div className="myPage">
             {

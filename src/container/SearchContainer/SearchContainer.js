@@ -5,7 +5,7 @@ import queryString from 'query-string';
 import useStores from 'lib/hooks/useStores';
 import SearchBook from 'components/SearchBook';
 import moment from 'moment';
-import { ErrorToast, SuccessToast } from 'lib/Toast';
+import { ErrorToast, SuccessToast, WarningToast } from 'lib/Toast';
 
 const SearchContainer = observer(() => {
   const { store } = useStores();
@@ -31,7 +31,7 @@ const SearchContainer = observer(() => {
         const { status } = error.response;
 
         if (status === 401) {
-          ErrorToast("로그인 후 검색 가능합니다.");
+          WarningToast("로그인 후 검색 가능합니다.");
           history.push('/auth');
         }
       });
