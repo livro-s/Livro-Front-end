@@ -9,13 +9,22 @@ const bookDummyData = [
         title: '점프 투 파이썬',
         loanDate:  '2020.08.20',
         returnDate: '2020.08.28',
-		location: '005.138 원94ㅂ'
+        location: '005.138 원94ㅂ',
+        image: 'http://image.kyobobook.co.kr/images/book/large/796/l9791188331796.jpg'
     },
     {
         title: '아기돼지 삼형제',
         loanDate:  '2020.08.20',
         returnDate: '2020.08.28',
-		location: '005.138 원94ㅂ'
+		location: '005.138 원94ㅂ',
+        image: 'http://image.kyobobook.co.kr/images/book/large/796/l9791188331796.jpg'
+    },
+    {
+        title: '아기돼지 삼형제',
+        loanDate:  '2020.08.20',
+        returnDate: '2020.08.28',
+		location: '005.138 원94ㅂ',
+        image: 'http://image.kyobobook.co.kr/images/book/large/796/l9791188331796.jpg'
     },
 ]
 
@@ -38,7 +47,7 @@ const MyInfo = () => {
                         {!isLoan(bookDummyData.length) ? <MySearch isLoaned={true}/>: <MySearch isLoaned={false}/>}
                     </div>
                 </div>
-                {!isLoan(bookDummyData.length) ? <Loan isLoaned={true}/>: <Loan isLoaned={false}/>}
+                {!isLoan(bookDummyData.length) ? <Loan isLoaned={true} bookdata={bookDummyData}/>: <Loan isLoaned={false} bookdata={bookDummyData}/>}
             </div>
         </div>
     )
