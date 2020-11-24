@@ -1,10 +1,10 @@
 import React from "react";
 import "./SearchBook.scss";
 import { GoSearch } from 'react-icons/go';
-import BookIcon from 'assets/icons/BookIcon.png';
+import BookIcon from 'assets/svg/BookIcon';
 import { Palette } from "styles/Palette/Palette";
 import { useKeyDown } from "lib/hooks/useKeyDown";
-import Logo from 'assets/images/Logo.png';
+import Logo from 'assets/svg/Logo';
 
 const SearchBook = ({ keyword, setKeyword, requestSearchBooks }) => {
   const { main } = Palette;
@@ -15,7 +15,7 @@ const SearchBook = ({ keyword, setKeyword, requestSearchBooks }) => {
       <div className="SearchBook-TopWrapper">
         <div className="SearchBook-TopWrapper-InputWrapper">
           <div className="SearchBook-TopWrapper-InputWrapper-InputBox">
-            <img className="SearchBook-TopWrapper-InputWrapper-InputBox-Icon" src ={BookIcon} alt ="bookicon" />
+            <BookIcon className="SearchBook-TopWrapper-InputWrapper-InputBox-Icon" />
             <input
               type ="text"
               value={keyword}
@@ -36,7 +36,7 @@ const SearchBook = ({ keyword, setKeyword, requestSearchBooks }) => {
       <div className="SearchBook-SearchList">
         <div className="SearchBook-SearchList-Item">
           <div className="SearchBook-SearchList-Item-Left">
-            <img className="SearchBook-SearchList-Item-Left-Logo" src={Logo} alt ="logo" />
+            <Logo className="SearchBook-SearchList-Item-Left-Logo" />
             
             <div className="SearchBook-SearchList-Item-Left-Contents">
               <div>(빠르게 배워서 바르게 적용하는) Vue.js 퀵 스타트</div>
