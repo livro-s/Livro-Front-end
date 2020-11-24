@@ -3,6 +3,7 @@ import { Palette } from 'styles/Palette/Palette';
 import './Main.scss';
 import MainLibrary from './MainLibrary';
 import MainNotice from './MainNotice/MainNotice';
+import Footer from 'components/Common/Footer';
 
 const Main = () => {
   const { main } = Palette;
@@ -23,6 +24,7 @@ const Main = () => {
 
       <MainLibrary />
       <MainNotice />
+      <Footer />
     </>
   );
 };
