@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './MyInfo.scss';
 import Profile from './Profile/Profile';
 import Loan from './Loan/Loan';
@@ -28,9 +28,10 @@ const bookDummyData = [
     },
 ]
 
-const MyInfo = () => {
+const MyInfo = ({ bookData, setbookData }) => {
 
     const isLoan = ( length ) => {
+        console.log(length);
         if (length === 0) {
             return false;
         } else {
@@ -44,10 +45,10 @@ const MyInfo = () => {
                 <div className="myPage-profile-search--wrapper">
                         <Profile/>
                     <div className="myPage-search">
-                        {!isLoan(bookDummyData.length) ? <MySearch isLoaned={true}/>: <MySearch isLoaned={false}/>}
+                        {!isLoan(bookData.book && bookData.book.length) ? <MySearch isLoaned={true}/>: <MySearch isLoaned={false}/>}
                     </div>
                 </div>
-                {!isLoan(bookDummyData.length) ? <Loan isLoaned={true} bookdata={bookDummyData}/>: <Loan isLoaned={false} bookdata={bookDummyData}/>}
+                {!isLoan(bookData.book && bookData.book.length) ? <Loan isLoaned={true} bookdata={bookData}/>: <Loan isLoaned={false} bookdata={bookData}/>}
             </div>
         </div>
     )

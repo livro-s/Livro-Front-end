@@ -4,14 +4,8 @@ import './Loan.scss';
 
 const Loan = ({ isLoaned, bookdata }) => {
 
-    const [bookData, setbookData] = useState(bookdata);
-    console.log(bookData);
-
-    const MappingLoanbook = () => {
-        bookData.map((book, key) => 
-            <div className="myPage-loan-book" key={key.title} >{book.title}</div>
-        )
-    }
+    console.log(bookdata.book);
+    
     return (
         <div className="myPage-loan">
             {isLoaned ? (
@@ -21,8 +15,8 @@ const Loan = ({ isLoaned, bookdata }) => {
                     <div className="myPage-loan-none">없어요</div>
                 {/*대출한 도서가 있는 경우 Mapping 예정 */}
                 </>
-            ) : bookData.map((book, key) => 
-                    <div className="myPage-loan-book-wrapper">
+            ) : bookdata.book && bookdata.book.map((book, key) => 
+                    <div className="myPage-loan-book-wrapper" key={key}>
                         <img src={book.image} alt="책" className="myPage-loan-book-image"/>
                         <div className="myPage-loan-book">
                             <div className="myPage-loan-book-title">{book.title}</div>
