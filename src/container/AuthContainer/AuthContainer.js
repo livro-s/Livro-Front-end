@@ -28,10 +28,11 @@ const AuthContainer = ({ history }) => {
     }
     await handleLogin(data)
       .then((res) => {
-        const { status } = res;
-        if (status === 200) {
+        if (res.accessToken) {
           SuccessToast('로그인 성공');
           history.push('/');
+          sessionStorage.setItem('livros-token', res.accessToken);
+          return;
         }
       })
       .catch((err) => {
