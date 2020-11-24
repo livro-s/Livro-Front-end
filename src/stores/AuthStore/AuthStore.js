@@ -5,7 +5,6 @@ import { postRequest } from 'lib/Axios';
 class AuthStore {
   @action
   handleLogin = async (request) => {
-    console.log('request', request);
     try {
       const data = await postRequest('/user/', request);
 
