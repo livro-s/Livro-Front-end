@@ -5,10 +5,28 @@
 	display: -webkit-flex;
 }
 
+@mixin PageNationWrapButton {
+	width: 100%;
+	height: 30px;
+	border: 1px solid rgba($color: $gray, $alpha: 0.16);
+
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	cursor: pointer;
+
+	& > * {
+		font-size: 15px;
+		color: $darkGray;
+	}
+}
+
 .SearchBook {
 	width: 100%;
 	height: calc(100vh - 170px);
-	margin-top: 1rem;
+	margin: 1rem 0;
 
 	@include flexStyle();
 	flex-direction: column;
@@ -82,13 +100,17 @@
 
 	&-SearchList {
 		width: 70%;
-		overflow: auto;
 		@include flexStyle();
-		// flex-grow: 1;
+		flex-grow: 1;
 		flex-direction: column;
 		-ms-flex-direction: column;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
+
+		&-NoResults {
+			font-size: 22px;
+			margin-top: 3rem;
+		}
 
 		&-Item {
 			width: 100%;
@@ -98,6 +120,10 @@
 			justify-content: space-between;
 			border-bottom: 1px solid $lighterGray;
 
+			&:first-child {
+				border-top: 1px solid $lighterGray;
+			}
+
 			&-Left {
 				margin-top: 12px;
 				padding: 0 2rem;
@@ -106,7 +132,10 @@
 				align-items: center;
 
 				&-Logo {
-					margin-right: 10px;
+					width: 70px;
+					height: 80px;
+					object-fit: cover;
+					margin-right: 1rem;
 				}
 			}
 
@@ -121,6 +150,14 @@
 
 				&-Contents {
 					text-align: center;
+
+					&-Loanable {
+						color: green;
+					}
+
+					&-Disable {
+						color: red;
+					}
 
 					&-Button {
 						background-color: $main;
@@ -137,19 +174,62 @@
 							outline: none;
 						}
 					}
+
+					&-DisableButton {
+						background-color: $lighterGray;
+						border: none;
+						outline: none;
+						color: $white;
+						border-radius: 25px;
+						width: 150px;
+						padding: 5px 0;
+						margin-top: 5px;
+						cursor: not-allowed;
+
+						&:focus {
+							outline: none;
+						}
+					}
 				}
 			}
 		}
 
-		// &-NoSearch {
-		// 	letter-spacing: 0.1em;
-		// 	font-size: 7rem;
-		// }
+		&-NoSearch {
+			letter-spacing: 0.1em;
+			font-size: 7rem;
+		}
 
-		// &-SubTitle {
-		// 	margin-left: -10px;
-		// 	margin-top: -1rem;
-		// 	font-size: 20px;
-		// }
+		&-SubTitle {
+			margin-left: -10px;
+			margin-top: -1rem;
+			font-size: 20px;
+		}
+	}
+
+	&-PageWrapper {
+		display: flex;
+		display: -webkit-flex;
+		justify-content: center;
+		align-items: center;
+
+		&-LeftWrap {
+			@include PageNationWrapButton();
+		}
+
+		&-Count {
+			width: 90px;
+			height: 30px;
+			background-color: $main;
+			font-size: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $white;
+			margin: 1rem 5px;
+		}
+
+		&-RightWrap {
+			@include PageNationWrapButton();
+		}
 	}
 }
