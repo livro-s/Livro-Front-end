@@ -1,6 +1,7 @@
 import React from 'react';
 import './Register.scss';
 import { SelectBox } from 'components/Common/SelectBox';
+import Loading from 'components/Common/Loading';
 
 const Register = ({
   handleIsLogin,
@@ -15,11 +16,13 @@ const Register = ({
   studentNo,
   setStudentNo,
   requestHandleRegister,
+  isLoading,
 }) => {
   const [isNext, setIsNext] = React.useState(false);
 
   return (
     <div className="Register">
+      {isLoading && <Loading />}
       {!isNext ? (
         <>
           <div className="Register-Title">SIGNUP</div>
