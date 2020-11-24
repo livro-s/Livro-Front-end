@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Notice.scss';
 // import NoticeCard from './NoticeCard/NoticeCard';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import Loading from 'components/Common/Loading';
+import { getToken } from 'lib/util/Token';
+import { useHistory } from 'react-router-dom';
+import { WarningToast } from 'lib/Toast';
 const Notice = ({ prevPage, nextPage, page, cardTemp, isLoading }) => {
+  const history = useHistory();
+  useEffect(() => {
+    if (!getToken()) {
+      history.push('/');
+      WarningToast('로그인후 사용 가능합니다.');
+    }
+  }, [history]);
   return (
     <>
       {isLoading && <Loading />}

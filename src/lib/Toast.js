@@ -7,7 +7,7 @@ export const SuccessToast = (message) => {
     position: 'top-right',
     autoClose: 5000,
     hideProgressBar: false,
-    closeOnClick: false,
+    closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
@@ -19,7 +19,19 @@ export const ErrorToast = (message) => {
     position: 'top-right',
     autoClose: 5000,
     hideProgressBar: false,
-    closeOnClick: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+};
+
+export const WarningToast = (message) => {
+  toast.warning(message, {
+    position: 'top-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
