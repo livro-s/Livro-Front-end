@@ -7,7 +7,6 @@ class AuthStore {
   handleLogin = async (request) => {
     try {
       const data = await postRequest('/user/', request);
-
       return data;
     } catch (err) {
       throw err;
