@@ -8,7 +8,7 @@
         box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
         
-        &-book {
+        &-none {
             flex: 1;
             border-bottom: 1px solid #9B9B9B;
             display: flex;
@@ -16,6 +16,51 @@
             align-items: center;
             padding-left: 5%;
             color: #0F4C81;
+        }
+
+        &-book {
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-wrapper {
+                flex: 1;
+                border-bottom: 1px solid #9B9B9B;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                padding-left: 5%;
+                color: #0F4C81;
+            }
+
+            &-image {
+                width: 98px;
+                height: 128px;
+                margin-right: 25px;
+            }
+
+            &-title {
+                font-size: 18px;
+            }
+
+            &-subtitle {
+                width: 150px;
+                text-align: right;
+                font-size: 13px;
+            }
+
+            &-return {
+                width: 550px;
+                font-size: 18px;
+                text-align: right;
+
+                &-span {
+                    font-size: 23px;
+                    color: #19B45B;
+                    padding-right: 17px;
+                }
+            }
         }
     }
 }
