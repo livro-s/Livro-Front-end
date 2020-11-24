@@ -32,7 +32,6 @@ class NoticeStore {
   handleNoticeDetail = async (idx) => {
     try {
       const { data } = await getResponse(`/notice/${idx}`, getToken());
-      console.log(data);
       return data;
     } catch (err) {
       return err;

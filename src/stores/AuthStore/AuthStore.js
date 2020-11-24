@@ -17,7 +17,6 @@ class AuthStore {
   handleRegister = async (request) => {
     try {
       const data = await postRequest('/user/new/', request);
-      console.log(data);
       return data;
     } catch (err) {
       throw err;

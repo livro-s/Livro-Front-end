@@ -2,7 +2,7 @@ import React from "react";
 import "./SearchBook.scss";
 import { GoSearch } from 'react-icons/go';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import BookIcon from 'assets/icons/BookIcon.png';
+import BookIcon from 'assets/svg/BookIcon';
 import { Palette } from "styles/Palette/Palette";
 import { useKeyDown } from "lib/hooks/useKeyDown";
 import { useHistory } from "react-router-dom";
@@ -22,7 +22,6 @@ const SearchBook = ({
 }) => {
   const { main } = Palette;
   const history = useHistory();
-  console.log(searchList)
 
   return (
     <div className="SearchBook">
@@ -30,7 +29,7 @@ const SearchBook = ({
       <div className="SearchBook-TopWrapper">
         <div className="SearchBook-TopWrapper-InputWrapper">
           <div className="SearchBook-TopWrapper-InputWrapper-InputBox">
-            <img className="SearchBook-TopWrapper-InputWrapper-InputBox-Icon" src ={BookIcon} alt ="bookicon" />
+            <BookIcon className="SearchBook-TopWrapper-InputWrapper-InputBox-Icon" src ={BookIcon} alt ="bookicon" />
             <input
               type ="text"
               value={inputKeyword}
