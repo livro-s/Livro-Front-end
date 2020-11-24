@@ -1,14 +1,28 @@
 import React from "react";
 import "./SearchBook.scss";
 import { GoSearch } from 'react-icons/go';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import BookIcon from 'assets/icons/BookIcon.png';
 import { Palette } from "styles/Palette/Palette";
 import { useKeyDown } from "lib/hooks/useKeyDown";
 import { useHistory } from "react-router-dom";
 
-const SearchBook = ({ inputKeyword, setInputKeyword, requestSearchBooks, searchList, requestLoanBook }) => {
+const SearchBook = ({ 
+  isLoading,
+  keyword,
+  inputKeyword,
+  setInputKeyword,
+  maxCount,
+  page,
+  prevPage,
+  nextPage,
+  requestSearchBooks,
+  searchList,
+  requestLoanBook
+}) => {
   const { main } = Palette;
   const history = useHistory();
+  console.log(searchList)
 
   return (
     <div className="SearchBook">
@@ -44,7 +58,7 @@ const SearchBook = ({ inputKeyword, setInputKeyword, requestSearchBooks, searchL
       <div className="SearchBook-UnderBorder"></div>
       <div className="SearchBook-SearchList">
         {
-          searchList.map((search) => {
+          searchList && searchList.length > 0 ? searchList.map((search) => {
             const { author, category, id, image, loanable, location, publisher, title } = search;
             return (
               <div className="SearchBook-SearchList-Item" key={id}>
@@ -76,31 +90,32 @@ const SearchBook = ({ inputKeyword, setInputKeyword, requestSearchBooks, searchL
                 </div>
               </div>
             );
-          })
+          }) : !isLoading && keyword ? <div className="SearchBook-SearchList-NoResults">검색 결과가 없습니다</div> : <></>
         }
-        {/* <div className="SearchBook-SearchList-Item">
-          <div className="SearchBook-SearchList-Item-Left">
-            <img className="SearchBook-SearchList-Item-Left-Logo" src={Logo} alt ="logo" />
-            
-            <div className="SearchBook-SearchList-Item-Left-Contents">
-              <div>(빠르게 배워서 바르게 적용하는) Vue.js 퀵 스타트</div>
 
-              <div>저자: 홍길동</div>
-              <div>출판사: 이지스퍼블리싱</div>
-              <div>분야: 전공도서</div>
-            </div>
-          </div>
+        {
+          keyword === undefined &&
+          <>
+            <div className="SearchBook-SearchList-NoSearch">LIVRO<span style ={{ color: main }}>'S</span></div>
+            <div className="SearchBook-SearchList-SubTitle">어디서든 편하게 도서관 서비스를 이용해보세요</div>
+          </>
+        }
+      </div>
 
-          <div className="SearchBook-SearchList-Item-Right">
-            <div className="SearchBook-SearchList-Item-Right-Contents">
-              <div>대출 가능</div>
-              <div>위치: 005.138 원94q</div>
-              <button className="SearchBook-SearchList-Item-Right-Contents-Button">대출</button>
-            </div>
+      <div className="SearchBook-PageWrapper">
+        {
+          page > 1 &&
+          <div className="SearchBook-PageWrapper-LeftWrap" onClick={prevPage}>
+            <FiChevronLeft />
           </div>
-        </div> */}
-        {/* <div className="SearchBook-SearchList-NoSearch">LIVRO<span style ={{ color: main }}>'S</span></div>
-        <div className="SearchBook-SearchList-SubTitle">어디서든 편하게 도서관 서비스를 이용해보세요</div> */}
+        }
+        <div className="SearchBook-PageWrapper-Count">{page}</div>
+        {
+          page < maxCount &&
+          <div className="SearchBook-PageWrapper-RightWrap" onClick={nextPage}>
+            <FiChevronRight />
+          </div>
+        }
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import { observable, action } from 'mobx';
 @autobind
 class SearchStore {
   @observable searchList = [];
+  @observable isLoading = false;
 
   @action
   handleResetList = () => {
@@ -13,14 +14,18 @@ class SearchStore {
   }
 
   @action
-  handleSearchBooks = async (keyword) => {
+  handleSearchBooks = async (keyword, page = 1) => {
     try {
+      this.isLoading = true;
       this.searchList = [];
-      const { data } = await getResponse(`/book?search=${keyword}`);
-      this.searchList = data;
+      const { data } = await getResponse(`/book?search=${keyword}&page=${page}`, getToken());
+      const { book } = data;
+      this.searchList = book;
+      this.isLoading = false;
 
       return data;
     } catch (error) { 
+      this.isLoading = false;
       throw error;
     }
   }
