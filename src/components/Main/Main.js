@@ -4,6 +4,7 @@ import './Main.scss';
 import MainLibrary from './MainLibrary';
 import MainNotice from './MainNotice/MainNotice';
 import Footer from 'components/Common/Footer';
+import MainNoticeContainer from 'container/NoticeContainer/MainNoticeContainer';
 
 const Main = () => {
   const { main } = Palette;
@@ -23,7 +24,7 @@ const Main = () => {
       </div>
 
       <MainLibrary />
-      <MainNotice />
+      <MainNoticeContainer />
       <Footer />
     </>
   );
