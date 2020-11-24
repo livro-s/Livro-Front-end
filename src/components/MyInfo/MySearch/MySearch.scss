@@ -1,0 +1,31 @@
+.myPage {
+    &-search {
+        &-input-wrapper {
+            width: 400px;
+            height: 65px;
+            border: 3px solid #0F4C81;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 4%;
+        }
+
+        &-input {
+            border: 0;
+            width: 295px;
+            margin-left: 20px;
+            outline: none;
+        }
+        
+        &-button {
+            width: 170px;
+            height: 40px;
+            background-color: #0F4C81;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            color: white;
+        }
+    }
+}

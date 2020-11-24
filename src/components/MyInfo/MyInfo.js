@@ -1,33 +1,44 @@
 import React from 'react';
-import Book from 'assets/svg/Book';
 import './MyInfo.scss';
-import { GoSearch } from 'react-icons/go';
+import Profile from './Profile/Profile';
+import Loan from './Loan/Loan';
+import MySearch from './MySearch/MySearch';
+
+const bookDummyData = [
+    {
+        title: '점프 투 파이썬',
+        loanDate:  '2020.08.20',
+        returnDate: '2020.08.28',
+		location: '005.138 원94ㅂ'
+    },
+    {
+        title: '아기돼지 삼형제',
+        loanDate:  '2020.08.20',
+        returnDate: '2020.08.28',
+		location: '005.138 원94ㅂ'
+    },
+]
 
 const MyInfo = () => {
+
+    const isLoan = ( length ) => {
+        if (length === 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     return (
         <div className="myPage">
             <div className="myPage-background"/>
             <div className="myPage-book-wrapper">
                 <div className="myPage-profile-search--wrapper">
-                    <div className="myPage-profile">
-                        <div className="myPage-profile-circle"/>
-                        <div className="myPage-profile-number">2학년 1반 11번 신서림</div>
-                    </div>
+                        <Profile/>
                     <div className="myPage-search">
-                        <div className="myPage-search-input-wrapper">
-                            <Book/>
-                            <input className="myPage-search-input" type="text" placeholder="찾고싶은 도서를 검색해보세요"/>
-                            <GoSearch style={{ width: 20, height: 20 }}/>
-                        </div>
-                        <button className="myPage-search-button">검색</button>
+                        {!isLoan(bookDummyData.length) ? <MySearch isLoaned={true}/>: <MySearch isLoaned={false}/>}
                     </div>
                 </div>
-                <div className="myPage-loan">
-                    <div className="myPage-loan-book">대출한</div>
-                    <div className="myPage-loan-book">도서가</div>  
-                    <div className="myPage-loan-book">없어요</div>
-                    {/*대출한 도서가 있는 경우 Mapping 예정 */}
-                </div>
+                {!isLoan(bookDummyData.length) ? <Loan isLoaned={true}/>: <Loan isLoaned={false}/>}
             </div>
         </div>
     )

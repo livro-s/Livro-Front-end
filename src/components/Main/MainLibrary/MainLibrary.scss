@@ -40,7 +40,7 @@
 			-ms-flex-direction: column;
 			justify-content: space-between;
 			align-items: center;
-			box-shadow: -2px -0px 5px $lighterGray, 2px 0px 5px $lighterGray;
+			box-shadow: -2px -2px 5px $lighterGray, 2px 5px 5px $lighterGray;
 			border-radius: 5px;
 
 			&-Contents {
@@ -65,13 +65,19 @@
 			}
 
 			&-Button {
+				width: 110px;
+				height: 40px;
 				border: none;
 				outline: none;
 				background-color: $main;
 				color: $white;
 				border-radius: 25px;
-				width: 110px;
-				height: 35px;
+				box-shadow: -2px -0px 5px $lighterGray, 0px 4px 5px $lighterGray;
+				cursor: pointer;
+
+				&:focus {
+					outline: none;
+				}
 			}
 		}
 	}
