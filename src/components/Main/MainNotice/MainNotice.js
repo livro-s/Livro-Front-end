@@ -1,10 +1,11 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './MainNotice.scss';
+import moment from 'moment';
 
-const MainNotice = () => {
+const MainNotice = ({ res }) => {
   const history = useHistory();
-
+  const { uuid, title, content, createdAt } = res;
   return (
     <>
       <div className="MainNotice">
@@ -18,34 +19,22 @@ const MainNotice = () => {
             <div className="MainNotice-Wrap-Card-InnerItem">
               <div className="MainNotice-Wrap-Card-InnerItem-Wrapper">
                 <div className="MainNotice-Wrap-Card-InnerItem-Wrapper-TopTitle">
-                  도서관 이용 공지사항 안내
+                  {title}
                 </div>
                 <div className="MainNotice-Wrap-Card-InnerItem-Wrapper-UnderText">
-                  이성은 있는 있을 행복스럽고 실현에 것이다. 소리다.이것은
-                  인도하겠다는 능히 날카로우나 인생에 천고에 든 그들은 아니다.
-                  꽃이 창공에 대고, 풀이 것이다. 안고, 속에서 뜨 이성은 있는
-                  있을 행복스럽고 실현에 것이다. 소리다.이것은 인도하겠다는 능히
-                  날카로우나 인생에 천고에 든 그들은 아니다. 꽃이 창공에 대고,
-                  풀이 것이다. 안고, 속에서 뜨고 이성은 있는 있을 행복스럽고
-                  실현에 것이다. 소리다.이것은 인도하겠다는 능히 날카로우나
-                  인생에 천고에 든 그들은 아니다. 꽃이 창공에 대고, 풀이 것이다.
-                  안고, 속에서 뜨고고 풀이 것이다. 안고, 속에서 뜨고 이성은 있는
-                  있을 행복스럽고 풀이 것이다. 안고, 속에서 뜨고 이성은 있는
-                  있을 행복스럽고 풀이 것이다. 안고, 속에서 뜨고 이성은 있는
-                  풀이 것이다. 안고, 속에서 뜨고 이성은 있는 있을 행복스럽고
-                  풀이 것이다. 안고, 속에서 뜨고 이성은 있는 있을 행복스럽고
-                  있을 행복스럽고 풀이 것이다. 안고, 속에서 뜨고 이성은 있는
-                  있을 행복스럽고 풀이 것이다. 안고, 속에서 뜨고 이성은 있는
-                  있을 행복스럽고
+                  {content}
                 </div>
               </div>
               <div className="MainNotice-Wrap-Card-InnerItem-Wrapper-Date">
-                2020년 8월 20일
+                {moment(createdAt).format('YYYY년 MM월 DD일')}
               </div>
             </div>
           </div>
           <div className="MainNotice-Wrap-ButtonWrap">
-            <button className="MainNotice-Wrap-ButtonWrap-Button" onClick={() => history.push('/notice')}>
+            <button
+              className="MainNotice-Wrap-ButtonWrap-Button"
+              onClick={() => history.push('/notice')}
+            >
               더보기
             </button>
           </div>
