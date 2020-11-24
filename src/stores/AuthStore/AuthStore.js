@@ -3,18 +3,18 @@ import { autobind } from 'core-decorators';
 import { postRequest } from 'lib/Axios';
 @autobind
 class AuthStore {
-  @observable isLaoding = false;
+  @observable isLoading = false;
 
   @action
   handleLogin = async (request) => {
     try {
-      this.isLaoding = true;
+      this.isLoading = true;
       const data = await postRequest('/user/', request);
-      this.isLaoding = false;
+      this.isLoading = false;
 
       return data;
     } catch (err) {
-      this.isLaoding = false;
+      this.isLoading = false;
 
       throw err;
     }
@@ -23,13 +23,13 @@ class AuthStore {
   @action
   handleRegister = async (request) => {
     try {
-      this.isLaoding = true;
+      this.isLoading = true;
       const data = await postRequest('/user/new/', request);
-      this.isLaoding = false;
+      this.isLoading = false;
 
       return data;
     } catch (err) {
-      this.isLaoding = false;
+      this.isLoading = false;
 
       throw err;
     }
