@@ -6,6 +6,7 @@ import BookIcon from 'assets/svg/BookIcon';
 import { Palette } from "styles/Palette/Palette";
 import { useKeyDown } from "lib/hooks/useKeyDown";
 import { useHistory } from "react-router-dom";
+import Loading from "components/Common/Loading";
 
 const SearchBook = ({ 
   isLoading,
@@ -25,6 +26,9 @@ const SearchBook = ({
 
   return (
     <div className="SearchBook">
+      {
+        isLoading && <Loading />
+      }
       <div className="SearchBook-Background"></div>
       <div className="SearchBook-TopWrapper">
         <div className="SearchBook-TopWrapper-InputWrapper">
