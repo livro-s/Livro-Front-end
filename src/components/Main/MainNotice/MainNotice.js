@@ -5,7 +5,6 @@ import moment from 'moment';
 
 const MainNotice = ({ res, NoticeLength }) => {
   const history = useHistory();
-  console.log(NoticeLength);
   const { uuid, title, content, createdAt } = res;
   return (
     <>

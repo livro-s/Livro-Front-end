@@ -21,7 +21,6 @@ const NoticeContainer = observer(() => {
 
   const reqestBeforCheckPage = useCallback(async () => {
     const res = await handleNoticePage(page + 1);
-    console.log('resres', res.length);
   }, [handleNoticePage, page]);
 
   const prevPage = () => {
