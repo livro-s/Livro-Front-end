@@ -9,10 +9,10 @@ class SearchStore {
   @action
   handleSearchBooks = async (keyword) => {
     try {
-      const response = await getResponse(`/book?search=${keyword}`);
-      this.searchList = response.data.books;
+      const { data } = await getResponse(`/book?search=${keyword}`);
+      this.searchList = data.data.books;
 
-      return response;
+      return data;
     } catch (error) { 
       throw error;
     }

@@ -3,7 +3,7 @@ import { SERVER } from 'config/config.json';
 
 export const getResponse = async (url, token) => {
 	try {
-		const { data } = await axios.get(`${SERVER}${url}`, {
+		const data = await axios.get(`${SERVER}${url}`, {
 			headers: token && {
 				'Authorization': `Bearer ${token}`,
 			},
@@ -20,7 +20,7 @@ export const postRequest = async (
 	token
 ) => {
 	try {
-		const { data } = await axios.post(
+		const data = await axios.post(
 			`${SERVER}${url}`,
 			request,
 			{
@@ -37,7 +37,7 @@ export const postRequest = async (
 
 export const modifyRequest = async (url, request, token) => {
 	try {
-		const { data } = await axios.put(
+		const data = await axios.put(
 			`${SERVER}${url}`,
 			request,
 			{
@@ -54,7 +54,7 @@ export const modifyRequest = async (url, request, token) => {
 
 export const deleteRequest = async (url, token) => {
 	try {
-		const { data } = await axios.delete(`${SERVER}${url}`, {
+		const data = await axios.delete(`${SERVER}${url}`, {
 			headers: token && {
 				'Authorization': `Bearer ${token}`,
 			},
