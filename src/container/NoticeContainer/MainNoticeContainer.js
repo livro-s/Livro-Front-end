@@ -5,7 +5,11 @@ import MainNotice from 'components/Main/MainNotice/MainNotice';
 import moment from 'moment';
 const MainNoticeContainer = observer(() => {
   const { store } = useStores();
-  const { handleLatestNotice, NoticeLength } = store.NoticeStore;
+  const {
+    handleLatestNotice,
+    NoticeLength,
+    handleNoticePage,
+  } = store.NoticeStore;
   const [res, setRes] = useState({});
 
   const requestHandleLatestNotice = useCallback(async () => {
@@ -25,7 +29,8 @@ const MainNoticeContainer = observer(() => {
 
   useEffect(() => {
     requestHandleLatestNotice();
-  }, [requestHandleLatestNotice]);
+    handleNoticePage(1);
+  }, [handleNoticePage, requestHandleLatestNotice]);
 
   return <MainNotice res={res} NoticeLength={NoticeLength} />;
 });
