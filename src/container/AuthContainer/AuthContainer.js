@@ -32,7 +32,7 @@ const AuthContainer = ({ history }) => {
         if (status === 200) {
           SuccessToast('로그인 성공');
           history.push('/');
-          sessionStorage.setItem('livros-token', res.accessToken);
+          sessionStorage.setItem('livros-token', res.data.accessToken);
           return;
         }
       })
