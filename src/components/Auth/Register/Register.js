@@ -1,5 +1,6 @@
 import React from 'react';
 import './Register.scss';
+import { SelectBox } from 'components/Common/SelectBox';
 
 const Register = ({
   handleIsLogin,
@@ -28,12 +29,15 @@ const Register = ({
                 <div className="Register-SchoolInputWrap-SchoolNameWrap-InnerWrap-TopTitle">
                   학교
                 </div>
-                <input
-                  type="text"
-                  className="Register-SchoolInputWrap-SchoolNameWrap-InnerWrap-SelectBox"
-                  value={school}
+                <SelectBox
                   onChange={(e) => setSchool(e.target.value)}
-                ></input>
+                  style={{ backgroundColor: 'white', height: '100%' }}
+                >
+                  <option>학교를 선택해 주세요.</option>
+                  <option>대덕소프트웨어마이스터고등학교</option>
+                  <option>대전소프트웨어마이스터고등학교</option>
+                  <option>대구소프트웨어고등학교</option>
+                </SelectBox>
               </div>
             </div>
             <div className="Register-SchoolInputWrap-SchoolGradeWrap">
