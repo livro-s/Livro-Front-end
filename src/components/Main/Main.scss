@@ -1,12 +1,16 @@
 @import 'styles/Palette/Palette.scss';
 
-.Main {
-	width: 100%;
-	height: calc(100vh - 170px);
+@mixin flexStyle() {
 	display: flex;
 	display: -webkit-flex;
+}
+
+.Main {
+	width: 60%;
+	height: 80vh;
+	@include flexStyle();
 	justify-content: center;
-	padding: 0 3rem;
+	padding: 5rem 3rem;
 
 	&-Background {
 		width: 100%;
@@ -23,13 +27,6 @@
 	}
 
 	&-Contents {
-		width: 70%;
-		height: 420px;
-		display: flex;
-		display: -webkit-flex;
-		flex-direction: column;
-		justify-content: center;
-
 		&-Title {
 			letter-spacing: 0.1em;
 			font-size: 7rem;
