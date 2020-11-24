@@ -17,25 +17,25 @@
     border-radius: 8px;
     background-color: white;
 
-    &-Img {
-      width: 23vw;
-      height: 31vh;
-      border-radius: 8px;
-      & > img {
-        width: 100%;
-        height: 100%;
-      }
-    }
+    // &-Img {
+    //   width: 23vw;
+    //   height: 31vh;
+    //   border-radius: 8px;
+    //   & > img {
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    // }
     &-TitleWrap {
       width: 100%;
-      height: 18.6vh;
+      height: 49.6vh;
       padding: 4.6vh 1.5vw 2.8vh 1.1vw;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       border-bottom: 1px solid rgba(#dddddd, 0.47);
       &-TopTitle {
         font-size: 23px;
+        margin-bottom: 2.6vh;
       }
       &-SubTitle {
         width: 100%;

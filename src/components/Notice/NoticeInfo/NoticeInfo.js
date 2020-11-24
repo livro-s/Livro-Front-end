@@ -1,46 +1,30 @@
 import React from 'react';
 import './NoticeInfo.scss';
+import moment from 'moment';
+import { withRouter } from 'react-router-dom';
 
-const NoticeInfo = () => {
+const NoticeInfo = ({ detailRes, history }) => {
+  const { uuid, title, content, createdAt } = detailRes;
   return (
     <>
       <div className="NoticeInfo" />
       <div className="NoticeInfoWrap">
-        <div className="NoticeInfoWrap-Title">도서관 이용 공지사항 안내</div>
-        <div className="NoticeInfoWrap-Date">2020년 8월 12일</div>
-        <div className="NoticeInfoWrap-Text">
-          얼음이 되려니와, 과실이 넣는 같은 이상은 이상, 인류의 하였으며,
-          뿐이다. 그들은 우리의 그들은 구하지 목숨을 이는 위하여서, 쓸쓸하랴?
-          낙원을 피가 간에 있는 얼음에 수 보이는 위하여서. 얼마나 없으면 주며,
-          튼튼하며, 가슴이 곳이 위하여 밝은 것은 것이다. 영락과 대한 가지에 불어
-          힘있다. 구하지 그들은 사라지지 같이, 관현악이며, 구하기 때문이다. 가장
-          청춘의 물방아 피고, 가는 방황하여도, 그것을 이 때에, 아니다. 피어나는
-          새가 것은 그들은 못할 간에 미묘한 봄바람을 튼튼하며, 철환하였는가?
-          심장은 청춘에서만 청춘의 피가 가는 작고 그들은 수 살 것이다. 인간에
-          설산에서 가장 대한 청춘의 끓는 같으며, 철환하였는가? 두손을 찬미를
-          가장 구하지 그들의 청춘 풍부하게 고동을 황금시대다. 대중을 보는
-          할지니, 남는 고행을 있는가? 거선의 길을 않는 품에 위하여, 일월과 우리
-          보라. 그러므로 가슴이 동산에는 바이며, 말이다. 이것은 영원히 길을
-          이상은 싹이 이것을 우리는 뭇 몸이 것이다. 불러 놀이 있는 싸인 칼이다.
-          있는 보이는 몸이 인간의 사막이다. 아니더면, 밝은 앞이 약동하다. 보배를
-          현저하게 열락의 타오르고 귀는 위하여 우리 위하여서. 쓸쓸한 없는 이상은
-          우리 날카로우나 것이다. 남는 용감하고 기관과 얼음 곳으로 거친 이상은
-          더운지라 사막이다. 지혜는 방황하였으며, 무엇이 행복스럽고 꾸며 듣기만
-          우리 말이다. 피에 보배를 피는 열락의 투명하되 부패뿐이다. 길을 얼음이
-          뭇 인류의 날카로우나 열락의 바이며, 그들은 아름답고 말이다. 그림자는
-          예수는 인간의 약동하다. 가진 어디 꾸며 안고, 그들의 영원히 갑 소리다.
-          이것은 그리하였는가? 피는 그러므로 별과 오직 그들의 역사를 위하여서 수
-          것이다. 속잎나고, 노래하며 넣는 끝에 피고, 하여도 듣는다. 이 품으며,
-          하는 때까지 풀밭에 곧 것은 칼이다. 청춘 온갖 굳세게 구하지 눈에 무엇이
-          같이 사람은 교향악이다. 품고 가장 인간의 피는 부패를 수 무엇을 그들의
-          것이다.
+        <div className="NoticeInfoWrap-Title">{title}</div>
+        <div className="NoticeInfoWrap-Date">
+          {moment(createdAt).format('YYYY년 MM월 DD일')}
         </div>
+        <div className="NoticeInfoWrap-Text">{content}</div>
         <div className="NoticeInfoWrap-ButtonWrap">
-          <button className="NoticeInfoWrap-ButtonWrap-Button">돌아가기</button>
+          <button
+            className="NoticeInfoWrap-ButtonWrap-Button"
+            onClick={() => history.go(-1)}
+          >
+            돌아가기
+          </button>
         </div>
       </div>
     </>
   );
 };
 
-export default NoticeInfo;
+export default withRouter(NoticeInfo);
