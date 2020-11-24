@@ -4,7 +4,7 @@ import SearchContainer from 'container/SearchContainer';
 
 const SearchPage = () => {
   return (
-    <PageTemplate>
+    <PageTemplate isSearch={false}>
       <SearchContainer />
     </PageTemplate>
   )
