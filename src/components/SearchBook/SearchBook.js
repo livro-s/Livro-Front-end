@@ -3,8 +3,9 @@ import "./SearchBook.scss";
 import { GoSearch } from 'react-icons/go';
 import BookIcon from 'assets/icons/BookIcon.png';
 import { Palette } from "styles/Palette/Palette";
+import { useKeyDown } from "lib/hooks/useKeyDown";
 
-const SearchBook = () => {
+const SearchBook = ({ keyword, setKeyword, requestSearchBooks }) => {
   const { main } = Palette;
 
   return (
@@ -14,13 +15,20 @@ const SearchBook = () => {
         <div className="SearchBook-TopWrapper-InputWrapper">
           <div className="SearchBook-TopWrapper-InputWrapper-InputBox">
             <img className="SearchBook-TopWrapper-InputWrapper-InputBox-Icon" src ={BookIcon} alt ="bookicon" />
-            <input type ="text" placeholder="찾고싶은 도서를 검색해보세요" />
+            <input
+              type ="text"
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              onKeyDown={(e) => useKeyDown(e, requestSearchBooks)}
+              placeholder="찾고싶은 도서를 검색해보세요"
+            />
           </div>
 
           <GoSearch className="SearchBook-TopWrapper-InputWrapper-InputIcon" />
         </div>
 
-        <button className="SearchBook-TopWrapper-Button">검색</button>
+        <button className="SearchBook-TopWrapper-Button" onClick={requestSearchBooks}>검색</button>
       </div>
 
       <div className="SearchBook-UnderBorder"></div>

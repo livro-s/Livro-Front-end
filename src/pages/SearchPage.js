@@ -1,11 +1,11 @@
 import React from 'react';
-import SearchBook from 'components/SearchBook';
 import PageTemplate from 'components/Common/PageTemplate';
+import SearchContainer from 'container/SearchContainer';
 
 const SearchPage = () => {
   return (
     <PageTemplate>
-      <SearchBook />
+      <SearchContainer />
     </PageTemplate>
   )
 }
