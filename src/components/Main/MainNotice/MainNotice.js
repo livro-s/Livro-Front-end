@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import './MainNotice.scss';
 import moment from 'moment';
 
-const MainNotice = ({ res }) => {
+const MainNotice = ({ res, NoticeLength }) => {
   const history = useHistory();
   const { uuid, title, content, createdAt } = res;
   return (
@@ -31,12 +31,18 @@ const MainNotice = ({ res }) => {
             </div>
           </div>
           <div className="MainNotice-Wrap-ButtonWrap">
-            <button
-              className="MainNotice-Wrap-ButtonWrap-Button"
-              onClick={() => history.push('/notice')}
-            >
-              더보기
-            </button>
+            {NoticeLength === 0 ? (
+              <button className="MainNotice-Wrap-ButtonWrap-Button disabledButton">
+                더보기
+              </button>
+            ) : (
+              <button
+                className="MainNotice-Wrap-ButtonWrap-Button"
+                onClick={() => history.push('/notice')}
+              >
+                더보기
+              </button>
+            )}
           </div>
         </div>
       </div>

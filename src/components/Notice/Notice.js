@@ -2,7 +2,7 @@ import React from 'react';
 import './Notice.scss';
 import NoticeCard from './NoticeCard/NoticeCard';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-const Notie = ({ prevPage, nextPage, page, cardTemp }) => {
+const Notice = ({ prevPage, nextPage, page, cardTemp }) => {
   return (
     <>
       <div className="Notice" />
@@ -26,4 +26,4 @@ const Notie = ({ prevPage, nextPage, page, cardTemp }) => {
   );
 };
 
-export default Notie;
+export default Notice;

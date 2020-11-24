@@ -4,6 +4,8 @@ import { autobind } from 'core-decorators';
 import { getToken } from 'lib/util/Token';
 @autobind
 class NoticeStore {
+  @observable NoticeLength = 0;
+
   @action
   handleLatestNotice = async () => {
     try {
@@ -19,6 +21,7 @@ class NoticeStore {
   handleNoticePage = async (page) => {
     try {
       const { data } = await getResponse(`/notice?page=${page}`, getToken());
+      this.observable = data.length;
       return data;
     } catch (err) {
       return err;
