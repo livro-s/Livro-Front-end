@@ -32,51 +32,6 @@
         flex: 1;
         flex-direction: column;
     }
-    &-loan {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        background-color: white;
-        margin: 4.5% 4% 4% 2%;
-        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
-        border-radius: 5px;
-        
-        &-book {
-            flex: 1;
-            border-bottom: 1px solid #9B9B9B;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding-left: 5%;
-            color: #0F4C81;
-        }
-    }
-
-    &-profile {
-        display: flex;
-        flex: 1;
-        flex-direction: row;
-        background-color: white;
-        margin: 10% 0% 4% 15%;
-        align-items: center;
-        justify-content: flex-start;
-        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
-        border-radius: 5px;
-        
-        &-circle {
-            background-color: #0F4C81;
-            width: 90px;
-            height: 90px;
-            border-radius: 45px;
-            margin-left: 4%;
-        }
-        &-number {
-            padding-left: 85px;
-            font-size: 25px;
-            font-weight: normal;
-            color: #0F4C81;
-        }
-    }
     
     &-search {
         display: flex;
