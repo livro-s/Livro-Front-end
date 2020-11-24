@@ -1,0 +1,21 @@
+.Notice {
+  width: 100%;
+  height: 100vh;
+  background-image: url('../../assets/images/backgrounds/NoticeBackground.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.NoticeCardWrap {
+  width: 100%;
+  margin-top: 5vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}

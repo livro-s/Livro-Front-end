@@ -10,7 +10,7 @@ const App = () => {
     <Switch>
       <Route exact path="/" component={Main} />
       <Route exact path="/search" component={Search} />
-      <Route exact path="/auth" component={<AuthContainer />} />
+      <Route exact path="/auth" component={AuthContainer} />
       <Route
         path="/notice"
         component={() => <div>공지사항 페이지입니다.</div>}
