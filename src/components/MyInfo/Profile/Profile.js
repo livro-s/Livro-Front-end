@@ -1,11 +1,13 @@
 import React from 'react';
 import './Profile.scss';
 
-const Profile = () => {
+const Profile = ({ User, setUser }) => {
+
+    console.log(User);
     return (
         <div className="myPage-profile">
             <div className="myPage-profile-circle"/>
-            <div className="myPage-profile-number">2학년 1반 11번 신서림</div>
+            <div className="myPage-profile-number">{User.studentNo} {User.name}</div>
         </div>
     );
 }
