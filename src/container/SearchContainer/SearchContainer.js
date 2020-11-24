@@ -14,7 +14,7 @@ const SearchContainer = observer(() => {
   const { search } = useLocation();
   const { keyword } = queryString.parse(search);
   
-  const nowDate = moment().format('YYYY-MM-DD');
+  const nowDate = moment().format('YYYY.MM.DD');
   const [inputKeyword, setInputKeyword] = useState(keyword || '');
   const [page, setPage] = useState(1);
   const [maxCount, setMaxCount] = useState(1);
@@ -51,14 +51,14 @@ const SearchContainer = observer(() => {
     .then(({ status }) => {
       if (status === 201) {
         SuccessToast('도서 대출을 성공하였습니다.');
-        handleSearchBooks(inputKeyword);
+        requestSearchBooks();
       }
     })
 
     .catch((error) => {
       console.log(error);
-    })
-  }, [handleLoanBook, handleSearchBooks, inputKeyword, nowDate]);
+    });
+  }, [handleLoanBook, nowDate, requestSearchBooks]);
 
   useEffect(() => {
     if (keyword) {
