@@ -8,9 +8,10 @@ import {
 } from 'validation/Auth/AuthValidation';
 import { SuccessToast, ErrorToast } from 'lib/Toast';
 import { withRouter } from 'react-router-dom';
-const AuthContainer = ({ history }) => {
+import { observer } from 'mobx-react';
+const AuthContainer = observer(({ history }) => {
   const { store } = useStores();
-  const { handleLogin, handleRegister } = store.AuthStore;
+  const { handleLogin, handleRegister, isLoading } = store.AuthStore;
   const [isRegister, setIsRegister] = useState(false);
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
@@ -90,6 +91,7 @@ const AuthContainer = ({ history }) => {
 
   return (
     <AuthTemplate
+      isLoading={isLoading}
       userId={userId}
       setUserId={setUserId}
       password={password}
@@ -107,6 +109,6 @@ const AuthContainer = ({ history }) => {
       handleIsLogin={handleIsLogin}
     />
   );
-};
+});
 
 export default withRouter(AuthContainer);

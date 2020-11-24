@@ -1,5 +1,6 @@
 import React from 'react';
 import './Login.scss';
+import Loading from 'components/Common/Loading';
 
 const Login = ({
   handleIsRegister,
@@ -8,9 +9,11 @@ const Login = ({
   setUserId,
   password,
   setPassword,
+  isLoading,
 }) => {
   return (
     <div className="Login">
+      {isLoading && <Loading />}
       <div className="Login-Title">LOGIN</div>
       <input
         className="Login-IdInput"

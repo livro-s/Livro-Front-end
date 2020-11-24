@@ -19,6 +19,7 @@ const AuthTemplate = ({
   studentNo,
   setStudentNo,
   requestHandleRegister,
+  isLoading,
 }) => {
   return (
     <div className="AuthTemplate">
@@ -38,6 +39,7 @@ const AuthTemplate = ({
               studentNo={studentNo}
               setStudentNo={setStudentNo}
               requestHandleRegister={requestHandleRegister}
+              isLoading={isLoading}
             />
           ) : (
             <Login
@@ -47,6 +49,7 @@ const AuthTemplate = ({
               setUserId={setUserId}
               password={password}
               setPassword={setPassword}
+              isLoading={isLoading}
             />
           )}
         </div>
