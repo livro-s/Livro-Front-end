@@ -6,7 +6,7 @@ import NoticeCard from 'components/Notice/NoticeCard';
 
 const NoticeContainer = observer(() => {
   const { store } = useStores();
-  const { handleNoticePage, cardTempArray } = store.NoticeStore;
+  const { handleNoticePage } = store.NoticeStore;
   const [page, setPage] = useState(1);
   const [noitcePageArray, setNoticePageArray] = useState([]);
 
@@ -48,17 +48,19 @@ const NoticeContainer = observer(() => {
     reqestBeforCheckPage();
   }, [reqestBeforCheckPage]);
 
-  const cardTemp = noitcePageArray.map((data) => {
-    const { uuid, title, content, createdAt } = data;
-    return (
-      <NoticeCard
-        uuid={uuid}
-        title={title}
-        content={content}
-        createdAt={createdAt}
-      />
-    );
-  });
+  const cardTemp =
+    noitcePageArray &&
+    noitcePageArray.map((data) => {
+      const { uuid, title, content, createdAt } = data;
+      return (
+        <NoticeCard
+          uuid={uuid}
+          title={title}
+          content={content}
+          createdAt={createdAt}
+        />
+      );
+    });
 
   return (
     <Notice
