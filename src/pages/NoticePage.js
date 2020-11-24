@@ -1,10 +1,10 @@
 import PageTemplate from 'components/Common/PageTemplate';
 import React from 'react';
-import Notice from 'components/Notice';
+import NoticeContainer from 'container/NoticeContainer/NoticeContainer';
 const NoticePage = () => {
   return (
     <PageTemplate>
-      <Notice />
+      <NoticeContainer />
     </PageTemplate>
   );
 };
