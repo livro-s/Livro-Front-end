@@ -6,7 +6,7 @@ import NoticeCard from 'components/Notice/NoticeCard';
 
 const NoticeContainer = observer(() => {
   const { store } = useStores();
-  const { handleNoticePage } = store.NoticeStore;
+  const { handleNoticePage, isLoading } = store.NoticeStore;
   const [page, setPage] = useState(1);
   const [noitcePageArray, setNoticePageArray] = useState([]);
 
@@ -67,6 +67,7 @@ const NoticeContainer = observer(() => {
       nextPage={nextPage}
       page={page}
       cardTemp={cardTemp}
+      isLoading={isLoading}
     />
   );
 });

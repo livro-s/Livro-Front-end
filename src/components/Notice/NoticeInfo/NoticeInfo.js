@@ -2,11 +2,14 @@ import React from 'react';
 import './NoticeInfo.scss';
 import moment from 'moment';
 import { withRouter } from 'react-router-dom';
+import Loading from 'components/Common/Loading';
 
-const NoticeInfo = ({ detailRes, history }) => {
+const NoticeInfo = ({ detailRes, history, isLoading }) => {
   const { uuid, title, content, createdAt } = detailRes;
   return (
     <>
+      {isLoading && <Loading />}
+
       <div className="NoticeInfo" />
       <div className="NoticeInfoWrap">
         <div className="NoticeInfoWrap-Title">{title}</div>
