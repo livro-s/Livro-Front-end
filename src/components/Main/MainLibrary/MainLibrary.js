@@ -5,22 +5,22 @@ import MyPage from 'assets/icons/MyPage.png';
 import SearchBook from 'assets/icons/SearchBook.png';
 import CardArrow from 'assets/icons/CardArrow.png';
 import NewLibrary from "../NewLibrary";
+import { useHistory } from "react-router-dom";
 
 const MainLibrary = () => {
   const [isModal, setIsModal] = useState(false);
-  console.log(isModal);
+  const history = useHistory();
 
   const middleContents = [
     {
       name: '도서 검색',
-      link: '',
+      onClick: () => history.push('/search'),
       contents: '내가 찾는 도서의 유무와 도서관 내 위치를 검색을 통해 확인할 수 있어요.',
       icon: ApplyBook,
     },
 
     {
       name: '신간 도서 신청',
-      link: '',
       contents: '교내 도서관에 없는 도서를 신청하고 승인 여부를 확인할 수 있어요.',
       icon: SearchBook,
       onClick: () => setIsModal(!isModal),
@@ -28,7 +28,8 @@ const MainLibrary = () => {
 
     {
       name: '마이페이지',
-      link: '',
+      onClick: () => history.push('/mypage'),
+      link: '/mypage',
       contents: '내가 대출한 책의 대출일자와 연체 여부 등을 빠르게 확인할 수 있어요.',
       icon: MyPage,
     },

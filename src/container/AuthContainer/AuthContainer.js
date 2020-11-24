@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import useStores from 'lib/hooks/useStores';
 import AuthTemplate from 'components/Auth/AuthTemplate';
 import {
@@ -30,9 +30,9 @@ const AuthContainer = ({ history }) => {
       .then((res) => {
         const { status } = res;
         if (status === 200) {
+          sessionStorage.setItem('livros-token', res.data.accessToken);
           SuccessToast('로그인 성공');
           history.push('/');
-          sessionStorage.setItem('livros-token', res.data.accessToken);
           return;
         }
       })
@@ -82,6 +82,10 @@ const AuthContainer = ({ history }) => {
 
   const handleIsLogin = useCallback(() => {
     setIsRegister(false);
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.clear();
   }, []);
 
   return (

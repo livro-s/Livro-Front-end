@@ -1,7 +1,10 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './MainNotice.scss';
 
 const MainNotice = () => {
+  const history = useHistory();
+
   return (
     <>
       <div className="MainNotice">
@@ -42,7 +45,7 @@ const MainNotice = () => {
             </div>
           </div>
           <div className="MainNotice-Wrap-ButtonWrap">
-            <button className="MainNotice-Wrap-ButtonWrap-Button">
+            <button className="MainNotice-Wrap-ButtonWrap-Button" onClick={() => history.push('/notice')}>
               더보기
             </button>
           </div>
