@@ -15,7 +15,7 @@ const App = () => {
       <Route path="/myPage" component={MyPage} />
       <Route path="/noticeInfo/:idx" component={Pages.NoticeInfo} />
 
-      <Redirect to ="/" />
+      <Redirect to="/" />
     </Switch>
   );
 };
