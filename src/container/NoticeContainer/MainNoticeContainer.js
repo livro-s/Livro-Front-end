@@ -18,7 +18,7 @@ const MainNoticeContainer = observer(() => {
         setRes({
           uuid: '',
           title: '공지사항이 없습니다.',
-          content: '',
+          content: '공지사항이 없습니다.',
           createdAt: moment(),
         });
         return;

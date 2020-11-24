@@ -2,8 +2,10 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './MainNotice.scss';
 import moment from 'moment';
+import { getToken } from 'lib/util/Token';
 
 const MainNotice = ({ res, NoticeLength }) => {
+  console.log(res);
   const history = useHistory();
   const { uuid, title, content, createdAt } = res;
   return (
@@ -19,7 +21,7 @@ const MainNotice = ({ res, NoticeLength }) => {
             <div className="MainNotice-Wrap-Card-InnerItem">
               <div className="MainNotice-Wrap-Card-InnerItem-Wrapper">
                 <div className="MainNotice-Wrap-Card-InnerItem-Wrapper-TopTitle">
-                  {title}
+                  {!getToken() ? '로그인 후 사용해주세요.' : title}
                 </div>
                 <div className="MainNotice-Wrap-Card-InnerItem-Wrapper-UnderText">
                   {content}
