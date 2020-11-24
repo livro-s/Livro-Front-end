@@ -1,1 +1,151 @@
-/* your css code */
+@import 'styles/Palette/Palette.scss';
+
+@mixin flexStyle() {
+	display: flex;
+	display: -webkit-flex;
+}
+
+.SearchBook {
+	width: 100%;
+	height: calc(100vh - 170px);
+	margin-top: 1rem;
+
+	@include flexStyle();
+	flex-direction: column;
+	-ms-flex-direction: column;
+	align-items: center;
+
+	&-Background {
+		background-image: url('../../assets/images/backgrounds/SearchBackground.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+
+	&-TopWrapper {
+		@include flexStyle();
+
+		&-InputWrapper {
+			@include flexStyle();
+			align-items: center;
+			border: 2px solid $main;
+			border-radius: 10px;
+			margin-right: 1rem;
+			padding: 10px;
+
+			&-InputBox {
+				@include flexStyle();
+				align-items: center;
+
+				&-Icon {
+					margin-right: 15px;
+				}
+
+				& > input {
+					width: 500px;
+					max-width: 500px;
+					border: none;
+					outline: none;
+				}
+			}
+
+			&-InputIcon {
+				color: $main;
+				font-size: 22px;
+				cursor: pointer;
+			}
+		}
+
+		&-Button {
+			background-color: $main;
+			color: $white;
+			width: 100px;
+			border-radius: 25px;
+			border: none;
+			outline: none;
+			cursor: pointer;
+		}
+	}
+
+	&-UnderBorder {
+		width: 70%;
+		border: 0;
+		height: 2px;
+		background-color: $main;
+		margin-top: 3rem;
+	}
+
+	&-SearchList {
+		width: 70%;
+		overflow: auto;
+		@include flexStyle();
+		// flex-grow: 1;
+		flex-direction: column;
+		-ms-flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		&-Item {
+			width: 100%;
+			height: 140px;
+			max-height: 140px;
+			@include flexStyle();
+			justify-content: space-between;
+			border-bottom: 1px solid $lighterGray;
+
+			&-Left {
+				margin-top: 12px;
+				padding: 0 2rem;
+				padding-bottom: 10px;
+				@include flexStyle();
+				align-items: center;
+
+				&-Logo {
+					margin-right: 10px;
+				}
+			}
+
+			&-Right {
+				@include flexStyle();
+				flex-direction: column;
+				-ms-flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				border-left: 2px solid $lighterGray;
+				padding: 0 1rem;
+
+				&-Contents {
+					text-align: center;
+
+					&-Button {
+						background-color: $main;
+						border: none;
+						outline: none;
+						color: $white;
+						border-radius: 25px;
+						width: 150px;
+						padding: 5px 0;
+						margin-top: 5px;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
+		// &-NoSearch {
+		// 	letter-spacing: 0.1em;
+		// 	font-size: 7rem;
+		// }
+
+		// &-SubTitle {
+		// 	margin-left: -10px;
+		// 	margin-top: -1rem;
+		// 	font-size: 20px;
+		// }
+	}
+}

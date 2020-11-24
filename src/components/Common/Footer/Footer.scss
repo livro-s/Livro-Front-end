@@ -1,0 +1,56 @@
+@import 'styles/Palette/Palette.scss';
+
+@mixin flexStyle() {
+	display: flex;
+	display: -webkit-flex;
+}
+
+.Footer {
+	width: 100%;
+	height: 160px;
+	background-color: $skyBlue;
+
+	@include flexStyle();
+	justify-content: space-evenly;
+	align-items: center;
+
+	& * {
+		color: $main;
+	}
+
+	&-Wrapper {
+		width: 100%;
+		max-width: 1500px;
+	}
+
+	&-Contents {
+		width: 100%;
+		@include flexStyle();
+		justify-content: space-between;
+		align-items: center;
+
+		&-Left {
+			@include flexStyle();
+			align-items: center;
+			flex: 1;
+
+			&-Logo {
+				width: 80px;
+				height: 100px;
+				margin-right: 2rem;
+			}
+		}
+
+		&-Right {
+			max-width: 600px;
+			flex: 1;
+			@include flexStyle();
+			justify-content: space-between;
+		}
+	}
+
+	&-Github {
+		margin-left: 10px;
+		cursor: pointer;
+	}
+}
