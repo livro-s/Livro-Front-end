@@ -5,7 +5,7 @@ import queryString from 'query-string';
 import useStores from 'lib/hooks/useStores';
 import SearchBook from 'components/SearchBook';
 import moment from 'moment';
-import { SuccessToast } from 'lib/Toast';
+import { ErrorToast, SuccessToast } from 'lib/Toast';
 
 const SearchContainer = observer(() => {
   const { store } = useStores();
@@ -56,7 +56,20 @@ const SearchContainer = observer(() => {
     })
 
     .catch((error) => {
-      console.log(error);
+      const { status } = error.response;
+      
+      switch (status) {
+        case 409:
+          ErrorToast("이미 책 3권을 빌렸습니다.");
+          return;
+
+        case 500:
+          ErrorToast('서버 오류입니다.');
+          return;
+
+        default:
+          return;
+      }
     });
   }, [handleLoanBook, nowDate, requestSearchBooks]);
 

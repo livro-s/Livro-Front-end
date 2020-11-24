@@ -55,7 +55,11 @@ const SearchBook = ({
         <button className="SearchBook-TopWrapper-Button" onClick={requestSearchBooks}>검색</button>
       </div>
 
-      <div className="SearchBook-UnderBorder"></div>
+      <div className="SearchBook-UnderBorder">
+        {
+          searchList && searchList.length > 0 ? <div className="SearchBook-UnderBorder-Length">총 {searchList.length * maxCount}개의 도서가 검색되었습니다.</div> : <></>
+        }
+      </div>
       <div className="SearchBook-SearchList">
         {
           searchList && searchList.length > 0 ? searchList.map((search) => {

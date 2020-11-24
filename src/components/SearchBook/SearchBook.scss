@@ -92,10 +92,13 @@
 
 	&-UnderBorder {
 		width: 70%;
-		border: 0;
-		height: 2px;
-		background-color: $main;
-		margin-top: 3rem;
+		border-bottom: 2px solid $main;
+		margin-top: 1rem;
+
+		&-Length {
+			padding-bottom: 2px;
+			font-size: 18px;
+		}
 	}
 
 	&-SearchList {
