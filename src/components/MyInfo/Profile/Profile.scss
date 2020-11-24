@@ -1,0 +1,27 @@
+.myPage {
+    &-profile {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        background-color: white;
+        margin: 10% 0% 4% 15%;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        
+        &-circle {
+            background-color: #0F4C81;
+            width: 90px;
+            height: 90px;
+            border-radius: 45px;
+            margin-left: 4%;
+        }
+        &-number {
+            padding-left: 5.3rem;
+            font-size: 25px;
+            font-weight: normal;
+            color: #0F4C81;
+        }
+    }
+}

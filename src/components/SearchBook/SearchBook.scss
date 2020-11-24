@@ -1,0 +1,242 @@
+@import 'styles/Palette/Palette.scss';
+
+@mixin flexStyle() {
+	display: flex;
+	display: -webkit-flex;
+}
+
+@mixin PageNationWrapButton {
+	width: 100%;
+	height: 30px;
+	border: 1px solid rgba($color: $gray, $alpha: 0.16);
+
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	cursor: pointer;
+
+	& > * {
+		font-size: 15px;
+		color: $darkGray;
+	}
+}
+
+.SearchBook {
+	width: 100%;
+	height: calc(100vh - 170px);
+	margin: 1rem 0;
+
+	@include flexStyle();
+	flex-direction: column;
+	-ms-flex-direction: column;
+	align-items: center;
+
+	&-Background {
+		background-image: url('../../assets/images/backgrounds/SearchBackground.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+
+	&-TopWrapper {
+		@include flexStyle();
+
+		&-InputWrapper {
+			@include flexStyle();
+			align-items: center;
+			border: 2px solid $main;
+			border-radius: 10px;
+			margin-right: 1rem;
+			padding: 10px;
+
+			&-InputBox {
+				@include flexStyle();
+				align-items: center;
+
+				&-Icon {
+					margin-right: 15px;
+				}
+
+				& > input {
+					width: 500px;
+					max-width: 500px;
+					border: none;
+					outline: none;
+				}
+			}
+
+			&-InputIcon {
+				color: $main;
+				font-size: 22px;
+				cursor: pointer;
+			}
+		}
+
+		&-Button {
+			background-color: $main;
+			color: $white;
+			width: 100px;
+			border-radius: 25px;
+			border: none;
+			outline: none;
+			cursor: pointer;
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+
+	&-UnderBorder {
+		width: 70%;
+		border-bottom: 2px solid $main;
+		margin-top: 1rem;
+
+		&-Length {
+			padding-bottom: 2px;
+			font-size: 18px;
+		}
+	}
+
+	&-SearchList {
+		width: 70%;
+		@include flexStyle();
+		flex-grow: 1;
+		flex-direction: column;
+		-ms-flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&-NoResults {
+			font-size: 22px;
+			margin-top: 3rem;
+		}
+
+		&-Item {
+			width: 100%;
+			height: 140px;
+			max-height: 140px;
+			@include flexStyle();
+			justify-content: space-between;
+			border-bottom: 1px solid $lighterGray;
+
+			&:first-child {
+				border-top: 1px solid $lighterGray;
+			}
+
+			&-Left {
+				margin-top: 12px;
+				padding: 0 2rem;
+				padding-bottom: 10px;
+				@include flexStyle();
+				align-items: center;
+
+				&-Logo {
+					width: 70px;
+					height: 80px;
+					object-fit: cover;
+					margin-right: 1rem;
+				}
+			}
+
+			&-Right {
+				@include flexStyle();
+				flex-direction: column;
+				-ms-flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				border-left: 2px solid $lighterGray;
+				padding: 0 1rem;
+
+				&-Contents {
+					text-align: center;
+
+					&-Loanable {
+						color: green;
+					}
+
+					&-Disable {
+						color: red;
+					}
+
+					&-Button {
+						background-color: $main;
+						border: none;
+						outline: none;
+						color: $white;
+						border-radius: 25px;
+						width: 150px;
+						padding: 5px 0;
+						margin-top: 5px;
+						cursor: pointer;
+
+						&:focus {
+							outline: none;
+						}
+					}
+
+					&-DisableButton {
+						background-color: $lighterGray;
+						border: none;
+						outline: none;
+						color: $white;
+						border-radius: 25px;
+						width: 150px;
+						padding: 5px 0;
+						margin-top: 5px;
+						cursor: not-allowed;
+
+						&:focus {
+							outline: none;
+						}
+					}
+				}
+			}
+		}
+
+		&-NoSearch {
+			letter-spacing: 0.1em;
+			font-size: 7rem;
+		}
+
+		&-SubTitle {
+			margin-left: -10px;
+			margin-top: -1rem;
+			font-size: 20px;
+		}
+	}
+
+	&-PageWrapper {
+		display: flex;
+		display: -webkit-flex;
+		justify-content: center;
+		align-items: center;
+
+		&-LeftWrap {
+			@include PageNationWrapButton();
+		}
+
+		&-Count {
+			width: 90px;
+			height: 30px;
+			background-color: $main;
+			font-size: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $white;
+			margin: 1rem 5px;
+		}
+
+		&-RightWrap {
+			@include PageNationWrapButton();
+		}
+	}
+}

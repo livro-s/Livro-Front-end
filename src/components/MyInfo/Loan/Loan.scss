@@ -1,0 +1,68 @@
+.myPage {
+    &-loan {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        background-color: white;
+        margin: 4.5% 4% 4% 2%;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        
+        &-none {
+            flex: 1;
+            border-bottom: 1px solid #9B9B9B;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 5%;
+            color: #0F4C81;
+        }
+
+        &-book {
+            flex: 5;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-wrapper {
+                flex: 1;
+                border-bottom: 1px solid #9B9B9B;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding-left: 5%;
+                color: #0F4C81;
+            }
+
+            &-image {
+                flex: 1;
+                width: 98px;
+                height: 128px;
+                margin-right: 25px;
+            }
+
+            &-title {
+                font-size: 18px;
+            }
+
+            &-subtitle {
+                font-size: 13px;
+            }
+
+            &-return {
+                font-size: 18px;
+                flex: 1;
+                &-span {
+                    font-size: 23px;
+                    color: #19B45B;
+                    padding-left: 20px;
+                }
+                &-delay {
+                    font-size: 23px;
+                    color: #FF0000;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}

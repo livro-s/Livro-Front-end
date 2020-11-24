@@ -1,0 +1,64 @@
+@import 'styles/Palette/Palette.scss';
+
+@mixin PageNationWrapButton {
+  width: 100%;
+  border: 1px solid rgba($color: $gray, $alpha: 0.16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  & > * {
+    font-size: 15px;
+    color: $darkGray;
+  }
+}
+
+.Notice {
+  width: 100%;
+  height: 100vh;
+  background-image: url('../../assets/images/backgrounds/NoticeBackground.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.NoticeCardWrap {
+  width: 100%;
+  height: 60vh;
+  margin-top: 5vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.NoticePageNationWrap {
+  width: 5vw;
+  height: 2.5vh;
+  // background-color: red;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  grid-gap: 6px;
+  margin: 6.3vh auto auto auto;
+  &-PrevButton {
+    @include PageNationWrapButton();
+  }
+  &-CurrentPage {
+    width: 100%;
+    background-color: $main;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+  }
+  &-NextButton {
+    @include PageNationWrapButton();
+  }
+}

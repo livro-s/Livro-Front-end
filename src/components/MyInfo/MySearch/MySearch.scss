@@ -1,0 +1,69 @@
+.myPage {
+    &-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex: 2;
+        background-color: white;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+        margin-left: 15%;
+        margin-bottom: 10%;
+        border-radius: 5px;
+
+        &-input-wrapper {
+            width: 400px;
+            height: 65px;
+            border: 3px solid #0F4C81;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 4%;
+        }
+
+        &-input {
+            border: 0;
+            width: 295px;
+            margin-left: 20px;
+            outline: none;
+        }
+        
+        &-button {
+            width: 170px;
+            height: 40px;
+            background-color: #0F4C81;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            color: white;
+        }
+        
+        &-delay-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #9B9B9B;
+            
+            &-image {
+                width: 98px;
+                height: 128px;
+            }
+        }
+    }
+    &-delay-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex: 2;
+        background-color: white;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+        margin-left: 15%;
+        margin-bottom: 10%;
+        border-radius: 5px;
+    }
+    
+}

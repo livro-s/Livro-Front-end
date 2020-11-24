@@ -1,0 +1,30 @@
+@import 'styles/Palette/Palette.scss';
+
+@mixin flexStyle() {
+	display: flex;
+	display: -webkit-flex;
+}
+
+.Navbar {
+	width: 100%;
+	padding: 0 5rem;
+	margin-top: 1rem;
+
+	@include flexStyle();
+	justify-content: flex-end;
+	align-items: center;
+
+	&-Contents {
+		@include flexStyle();
+
+		&-Current {
+			border-bottom: 2px solid $main;
+			padding-bottom: 5px;
+		}
+
+		& > div {
+			margin-left: 5rem;
+			cursor: pointer;
+		}
+	}
+}

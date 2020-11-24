@@ -1,0 +1,59 @@
+@import 'styles/Palette/Palette.scss';
+
+.NoticeCard {
+  width: 25vw;
+  height: 57vh;
+  background-color: $lightBlue;
+  z-index: 1;
+  cursor: pointer;
+  box-shadow: 0px 3px 9px rgba($color: $black, $alpha: 0.16);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-Wrap {
+    width: 23vw;
+    height: 54vh;
+    border-radius: 8px;
+    background-color: white;
+
+    // &-Img {
+    //   width: 23vw;
+    //   height: 31vh;
+    //   border-radius: 8px;
+    //   & > img {
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    // }
+    &-TitleWrap {
+      width: 100%;
+      height: 49.6vh;
+      padding: 4.6vh 1.5vw 2.8vh 1.1vw;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid rgba(#dddddd, 0.47);
+      &-TopTitle {
+        font-size: 23px;
+        margin-bottom: 2.6vh;
+      }
+      &-SubTitle {
+        width: 100%;
+        // height: 7vh;
+        word-break: break-all;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+    &-DateWrap {
+      width: 100%;
+      height: 4.36vh;
+      display: flex;
+      align-items: center;
+      padding-left: 1.1vw;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import 'styles/Palette/Palette.scss';
+
+@mixin flexStyle() {
+	display: flex;
+	display: -webkit-flex;
+}
+
+.Main {
+	width: 60%;
+	height: 80vh;
+	@include flexStyle();
+	justify-content: center;
+	padding: 5rem 3rem;
+
+	&-Background {
+		width: 100%;
+		height: 100%;
+		background-image: url('../../assets/images/backgrounds/MainBackground.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+
+	&-Contents {
+		&-Title {
+			letter-spacing: 0.1em;
+			font-size: 7rem;
+		}
+
+		&-SubTitle {
+			color: $gray;
+			margin-top: -1rem;
+			font-size: 20px;
+		}
+	}
+}
