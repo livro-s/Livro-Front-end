@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.scss";
-import Logo from 'assets/images/Logo.png';
-import githubIcon from 'assets/icons/github.png';
+import Logo from 'assets/svg/Logo';
+import GithubIcon from 'assets/svg/Github';
 
 const Footer = () => {
   const memberList = [
@@ -26,7 +26,7 @@ const Footer = () => {
       <div className="Footer-Wrapper">
         <div className="Footer-Contents">
           <div className="Footer-Contents-Left">
-            <img className="Footer-Contents-Left-Logo" src={Logo} alt ="Logo" />
+            <Logo className="Footer-Contents-Left-Logo" />
             <div>
               livros는 대덕소프트웨어마이스터고내 도서관 서비스 웹입니다.<br />
               도서관에 가지 않고도 대출하고, 도서의 유무를 확인하고, 반납일을 확인하는 등<br />
@@ -55,7 +55,7 @@ const Footer = () => {
       </div>
 
       <a href="https://github.com/livro-s" target ="_blank" rel="noopener noreferrer" >
-        <img className="Footer-Github" src={githubIcon} alt ="github logo" />
+        <GithubIcon className="Footer-Github" />
       </a>
     </div>
   );
