@@ -106,7 +106,10 @@
 				align-items: center;
 
 				&-Logo {
-					margin-right: 10px;
+					width: 70px;
+					height: 80px;
+					object-fit: cover;
+					margin-right: 1rem;
 				}
 			}
 
@@ -122,6 +125,14 @@
 				&-Contents {
 					text-align: center;
 
+					&-Loanable {
+						color: green;
+					}
+
+					&-Disable {
+						color: red;
+					}
+
 					&-Button {
 						background-color: $main;
 						border: none;
@@ -132,6 +143,22 @@
 						padding: 5px 0;
 						margin-top: 5px;
 						cursor: pointer;
+
+						&:focus {
+							outline: none;
+						}
+					}
+
+					&-DisableButton {
+						background-color: $lighterGray;
+						border: none;
+						outline: none;
+						color: $white;
+						border-radius: 25px;
+						width: 150px;
+						padding: 5px 0;
+						margin-top: 5px;
+						cursor: not-allowed;
 
 						&:focus {
 							outline: none;
