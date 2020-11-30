@@ -21,12 +21,11 @@
 
 |                                                            | 이름       | 설명                                                              |
 | ---------------------------------------------------------- | ---------- | ----------------------------------------------------------------- |
-| ![](https://img.icons8.com/plasticine/24/000000/react.png) | React      | 팀원들이 React를 사용 할 수 있어 React로 결정하여 진행하엿습니다. |
-| ![](https://img.icons8.com/color/24/000000/sass.png)       | scss       | Scss를 활용하여 퍼블리싱을 진행 하였습니다.                       |
+| ![](https://img.icons8.com/plasticine/24/000000/react.png) | React      | 팀원들이 React를 사용 할 수 있어 React로 결정하여 진행하였습니다. |
+| ![](https://img.icons8.com/color/24/000000/sass.png)       | Scss       | Scss를 활용하여 퍼블리싱을 진행 하였습니다.                       |
 | &nbsp;                                                     | MobX       | Mobx 를 활용하여 상태관리를 적절히 사용하여 진행하였습니다.       |
 | ![](https://img.icons8.com/color/24/000000/javascript.png) | Javascript | 모두가 할 수 있는 자바스크립트로 정했습니다.                      |
-| ![](https://img.icons8.com/color/24/000000/git.png)        | Git&Github | Git Branch를 이용하여 협업을 진행하였습니다.                      | ![70%](https://progress-bar.dev/70) |
-
+| ![](https://img.icons8.com/color/24/000000/git.png)        | Git&Github | Git Branch를 이용하여 협업을 진행하였습니다.                      | 
 ## Livro 기능을 미리보고 싶어요!
 
 - `(학생)`로그인과 회원가입을 할 수 있습니다.
