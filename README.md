@@ -1,5 +1,3 @@
-# Livro-Front-end
-
 ## 언제 이 프로젝트를 만들게 되었나요?
 
 > 2020 3개 마이스터고 연합 해커톤 (2020 11.23 ~ 11.24)
@@ -39,5 +37,12 @@
 - `(관리자)`: 공지사항 추가, 수정, 삭제 관리
 
 ## 만들어진 Livro 를 보여드릴께요!
-![]
+![](https://images.velog.io/images/hollymalu/post/18a7d69d-f1a9-45fa-9c17-41e7e8d20939/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-11-30%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.24.32.png)
 
+![](https://images.velog.io/images/hollymalu/post/60cec04e-11cc-4cb0-88c2-0355ae30a54f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-11-30%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.32.55.png)
+
+![](https://images.velog.io/images/hollymalu/post/7c30646f-927a-433b-91b9-a88a7a4e4196/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-11-30%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.33.06.png)
+
+![](https://images.velog.io/images/hollymalu/post/d8fc6243-65bd-4c6f-b266-637c6dda6bff/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-11-30%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.32.48.png)
+
+![](https://images.velog.io/images/hollymalu/post/c7a734d5-b432-4d82-adc2-266dac29ee30/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-11-30%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.36.04.png)
